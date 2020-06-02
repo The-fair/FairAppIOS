@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16C434E6F1DA140451251003 /* Pods_FairAppIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F363346B189EA5809F2B98 /* Pods_FairAppIOS.framework */; };
 		641BAF7A248568B700E220F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641BAF79248568B700E220F1 /* AppDelegate.swift */; };
 		641BAF7C248568B700E220F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641BAF7B248568B700E220F1 /* SceneDelegate.swift */; };
 		641BAF7F248568B700E220F1 /* FairAppIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 641BAF7D248568B700E220F1 /* FairAppIOS.xcdatamodeld */; };
@@ -14,6 +15,11 @@
 		641BAF83248568BA00E220F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641BAF82248568BA00E220F1 /* Assets.xcassets */; };
 		641BAF86248568BA00E220F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641BAF85248568BA00E220F1 /* Preview Assets.xcassets */; };
 		641BAF89248568BA00E220F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 641BAF87248568BA00E220F1 /* LaunchScreen.storyboard */; };
+		6426E24224856DE90033C704 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6426E24124856DE90033C704 /* GoogleService-Info.plist */; };
+		648760812485D26500B12022 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648760802485D26500B12022 /* SignUpView.swift */; };
+		64B0D7872485A46700E3FAFA /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0D7862485A46700E3FAFA /* SessionStore.swift */; };
+		64B0D7892485C05C00E3FAFA /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0D7882485C05C00E3FAFA /* AuthView.swift */; };
+		64B0D78D2485CC2B00E3FAFA /* LabelledDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0D78C2485CC2B00E3FAFA /* LabelledDivider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,14 @@
 		641BAF85248568BA00E220F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		641BAF88248568BA00E220F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		641BAF8A248568BA00E220F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6426E24124856DE90033C704 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		648760802485D26500B12022 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		64B0D7862485A46700E3FAFA /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		64B0D7882485C05C00E3FAFA /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		64B0D78C2485CC2B00E3FAFA /* LabelledDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledDivider.swift; sourceTree = "<group>"; };
+		AFC86365BC570E99FA324994 /* Pods-FairAppIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FairAppIOS.debug.xcconfig"; path = "Target Support Files/Pods-FairAppIOS/Pods-FairAppIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C1F363346B189EA5809F2B98 /* Pods_FairAppIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FairAppIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCCFF96749B93925A04AB892 /* Pods-FairAppIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FairAppIOS.release.xcconfig"; path = "Target Support Files/Pods-FairAppIOS/Pods-FairAppIOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16C434E6F1DA140451251003 /* Pods_FairAppIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F0F9AB9B03C6D8F7A0BEEB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFC86365BC570E99FA324994 /* Pods-FairAppIOS.debug.xcconfig */,
+				DCCFF96749B93925A04AB892 /* Pods-FairAppIOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		641BAF6D248568B700E220F1 = {
 			isa = PBXGroup;
 			children = (
 				641BAF78248568B700E220F1 /* FairAppIOS */,
 				641BAF77248568B700E220F1 /* Products */,
+				0F0F9AB9B03C6D8F7A0BEEB4 /* Pods */,
+				7930F87AD3E075CD88646FD5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +84,11 @@
 		641BAF78248568B700E220F1 /* FairAppIOS */ = {
 			isa = PBXGroup;
 			children = (
-				641BAF79248568B700E220F1 /* AppDelegate.swift */,
-				641BAF7B248568B700E220F1 /* SceneDelegate.swift */,
-				641BAF80248568B700E220F1 /* ContentView.swift */,
+				641BAF922485696D00E220F1 /* View */,
+				641BAF912485696700E220F1 /* Model */,
+				641BAF902485695E00E220F1 /* App */,
 				641BAF82248568BA00E220F1 /* Assets.xcassets */,
+				6426E24124856DE90033C704 /* GoogleService-Info.plist */,
 				641BAF87248568BA00E220F1 /* LaunchScreen.storyboard */,
 				641BAF8A248568BA00E220F1 /* Info.plist */,
 				641BAF7D248568B700E220F1 /* FairAppIOS.xcdatamodeld */,
@@ -78,6 +105,66 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		641BAF902485695E00E220F1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				641BAF79248568B700E220F1 /* AppDelegate.swift */,
+				641BAF7B248568B700E220F1 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		641BAF912485696700E220F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				64B0D7852485A45300E3FAFA /* AuthSession */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		641BAF922485696D00E220F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				64B0D78B2485CC0800E3FAFA /* Component */,
+				64B0D78A2485CBF900E3FAFA /* Login */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		64B0D7852485A45300E3FAFA /* AuthSession */ = {
+			isa = PBXGroup;
+			children = (
+				64B0D7862485A46700E3FAFA /* SessionStore.swift */,
+			);
+			path = AuthSession;
+			sourceTree = "<group>";
+		};
+		64B0D78A2485CBF900E3FAFA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				641BAF80248568B700E220F1 /* ContentView.swift */,
+				64B0D7882485C05C00E3FAFA /* AuthView.swift */,
+				648760802485D26500B12022 /* SignUpView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		64B0D78B2485CC0800E3FAFA /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				64B0D78C2485CC2B00E3FAFA /* LabelledDivider.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		7930F87AD3E075CD88646FD5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1F363346B189EA5809F2B98 /* Pods_FairAppIOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 641BAF8D248568BA00E220F1 /* Build configuration list for PBXNativeTarget "FairAppIOS" */;
 			buildPhases = (
+				D36BB125508E2DB59A0A9A9F /* [CP] Check Pods Manifest.lock */,
 				641BAF72248568B700E220F1 /* Sources */,
 				641BAF73248568B700E220F1 /* Frameworks */,
 				641BAF74248568B700E220F1 /* Resources */,
+				E9A8E29BD1BD3E91FD560449 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				641BAF89248568BA00E220F1 /* LaunchScreen.storyboard in Resources */,
+				6426E24224856DE90033C704 /* GoogleService-Info.plist in Resources */,
 				641BAF86248568BA00E220F1 /* Preview Assets.xcassets in Resources */,
 				641BAF83248568BA00E220F1 /* Assets.xcassets in Resources */,
 			);
@@ -144,15 +234,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D36BB125508E2DB59A0A9A9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FairAppIOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9A8E29BD1BD3E91FD560449 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FairAppIOS/Pods-FairAppIOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FairAppIOS/Pods-FairAppIOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FairAppIOS/Pods-FairAppIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		641BAF72248568B700E220F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				641BAF7A248568B700E220F1 /* AppDelegate.swift in Sources */,
+				64B0D7872485A46700E3FAFA /* SessionStore.swift in Sources */,
+				64B0D7892485C05C00E3FAFA /* AuthView.swift in Sources */,
 				641BAF7F248568B700E220F1 /* FairAppIOS.xcdatamodeld in Sources */,
+				648760812485D26500B12022 /* SignUpView.swift in Sources */,
 				641BAF81248568B700E220F1 /* ContentView.swift in Sources */,
 				641BAF7C248568B700E220F1 /* SceneDelegate.swift in Sources */,
+				64B0D78D2485CC2B00E3FAFA /* LabelledDivider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,12 +422,14 @@
 		};
 		641BAF8E248568BA00E220F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFC86365BC570E99FA324994 /* Pods-FairAppIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FairAppIOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FairAppIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,18 +437,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = TheFair.FairAppIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		641BAF8F248568BA00E220F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCCFF96749B93925A04AB892 /* Pods-FairAppIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FairAppIOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FairAppIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,7 +458,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = TheFair.FairAppIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
