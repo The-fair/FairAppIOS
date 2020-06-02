@@ -17,6 +17,8 @@
 		641BAF89248568BA00E220F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 641BAF87248568BA00E220F1 /* LaunchScreen.storyboard */; };
 		6426E24224856DE90033C704 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6426E24124856DE90033C704 /* GoogleService-Info.plist */; };
 		648760812485D26500B12022 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648760802485D26500B12022 /* SignUpView.swift */; };
+		648760832485D9A100B12022 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648760822485D9A100B12022 /* SignInView.swift */; };
+		648760862485DF2200B12022 /* UserProfileConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648760852485DF2200B12022 /* UserProfileConstants.swift */; };
 		64B0D7872485A46700E3FAFA /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0D7862485A46700E3FAFA /* SessionStore.swift */; };
 		64B0D7892485C05C00E3FAFA /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0D7882485C05C00E3FAFA /* AuthView.swift */; };
 		64B0D78D2485CC2B00E3FAFA /* LabelledDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0D78C2485CC2B00E3FAFA /* LabelledDivider.swift */; };
@@ -34,6 +36,8 @@
 		641BAF8A248568BA00E220F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6426E24124856DE90033C704 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		648760802485D26500B12022 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		648760822485D9A100B12022 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		648760852485DF2200B12022 /* UserProfileConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileConstants.swift; sourceTree = "<group>"; };
 		64B0D7862485A46700E3FAFA /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		64B0D7882485C05C00E3FAFA /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		64B0D78C2485CC2B00E3FAFA /* LabelledDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledDivider.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 		641BAF912485696700E220F1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				648760842485DF0C00B12022 /* UserProfile */,
 				64B0D7852485A45300E3FAFA /* AuthSession */,
 			);
 			path = Model;
@@ -129,6 +134,14 @@
 				64B0D78A2485CBF900E3FAFA /* Login */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		648760842485DF0C00B12022 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				648760852485DF2200B12022 /* UserProfileConstants.swift */,
+			);
+			path = UserProfile;
 			sourceTree = "<group>";
 		};
 		64B0D7852485A45300E3FAFA /* AuthSession */ = {
@@ -145,6 +158,7 @@
 				641BAF80248568B700E220F1 /* ContentView.swift */,
 				64B0D7882485C05C00E3FAFA /* AuthView.swift */,
 				648760802485D26500B12022 /* SignUpView.swift */,
+				648760822485D9A100B12022 /* SignInView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -281,11 +295,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				648760832485D9A100B12022 /* SignInView.swift in Sources */,
 				641BAF7A248568B700E220F1 /* AppDelegate.swift in Sources */,
 				64B0D7872485A46700E3FAFA /* SessionStore.swift in Sources */,
 				64B0D7892485C05C00E3FAFA /* AuthView.swift in Sources */,
 				641BAF7F248568B700E220F1 /* FairAppIOS.xcdatamodeld in Sources */,
 				648760812485D26500B12022 /* SignUpView.swift in Sources */,
+				648760862485DF2200B12022 /* UserProfileConstants.swift in Sources */,
 				641BAF81248568B700E220F1 /* ContentView.swift in Sources */,
 				641BAF7C248568B700E220F1 /* SceneDelegate.swift in Sources */,
 				64B0D78D2485CC2B00E3FAFA /* LabelledDivider.swift in Sources */,
