@@ -20,17 +20,26 @@ struct SignUpView: View {
     @State var email: String = ""
     @State var password: String = ""
     
-    @State var marketList: [String] = []
-    @State var selectedMarket: String = ""
+    //@State var marketList: [String] = []
+    @State private var marketList = ["Market_A", "Market_B", "Market_C", "Market_D", "Market_E", "Market_F", "Market_G", "Market_H", "Market_G"]
+    @State var addedMarketList: [String] = []
+    
+    //@State private var selectedState: String = ""
+    //@State private var selectedCity: String = ""
+    //@State private var selectedMarket: String = ""
+    @State private var showModal: Bool = false
     
     @State var business: String = ""
     @State var businessAddr: String = ""
     
     let MarketList_Demo = ["Market_A", "Market_B", "Market_C", "Market_D", "Market_E", "Market_F", "Market_G", "Market_H", "Market_G"]
     
+    @State private var marketIndex_Demo = 0
+    
     
     // declare environment onbject session that could be shared through all the sub view
     @EnvironmentObject var session: SessionStore
+    //@EnvironmentObject var marketInfoBindings: MarketInfoBindings
     
     // **************************************************
     //  drop down list for attended market
@@ -42,98 +51,192 @@ struct SignUpView: View {
     // **************************************************
     var body: some View {
         ScrollView(.vertical){
-            // Main Stack
-            VStack {
-                Text("Fill In Your Account Information")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color.black)
-                    .multilineTextAlignment(.center)
-                
-                // email textfield
-                TextField("Email", text: $email)
-                .font(.system(size: 14))
-                .padding(12)
-                .background(RoundedRectangle(cornerRadius: 25)
-                    .strokeBorder(Color.black, lineWidth: 1))
-                
-                // password textfield
-                TextField("Password", text: $password)
-                .font(.system(size: 14))
-                .padding(12)
-                .background(RoundedRectangle(cornerRadius: 25)
-                    .strokeBorder(Color.black, lineWidth: 1))
-                
-                // first name textfield
-                TextField("First Name", text: $firstName)
-                .font(.system(size: 14))
-                .padding(12)
-                .background(RoundedRectangle(cornerRadius: 25)
-                    .strokeBorder(Color.black, lineWidth: 1))
-                
-                // last name textfield
-                TextField("Last Name", text: $lastName)
-                .font(.system(size: 14))
-                .padding(12)
-                .background(RoundedRectangle(cornerRadius: 25)
-                    .strokeBorder(Color.black, lineWidth: 1))
-                
-                // middle name textfield
-                TextField("Middle Name", text: $middleName)
-                .font(.system(size: 14))
-                .padding(12)
-                .background(RoundedRectangle(cornerRadius: 25)
-                    .strokeBorder(Color.black, lineWidth: 1))
-                
-                LabelledDivider(label: "Your Business")
-                
-                // business textfield
-                TextField("Your Business", text: $business)
-                .font(.system(size: 14))
-                .padding(12)
-                .background(RoundedRectangle(cornerRadius: 25)
-                    .strokeBorder(Color.black, lineWidth: 1))
-                
-                LabelledDivider(label: "Business Address")
-                
-                // business address
-                TextField("Business Address", text: $businessAddr)
-                .font(.system(size: 14))
-                .padding(12)
-                .background(RoundedRectangle(cornerRadius: 25)
-                    .strokeBorder(Color.black, lineWidth: 1))
-                
-                // stack for attended market
-                //Text("Attened Market").font(.system(size: 18, weight: .medium)).foregroundColor(Color.gray)
-                LabelledDivider(label: "Attended Market")
 
-            }
+                // Main Stack
+                    VStack {
+                        Text("Fill In Your Account Information")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color.black)
+                            .multilineTextAlignment(.center)
+                        
+                        Group {
+                            LabelledDivider(label: "Personal Information")
+                            
+                            // email textfield
+                            TextField("Email", text: $email)
+                            .font(.system(size: 14))
+                            .padding(12)
+                            .background(RoundedRectangle(cornerRadius: 25)
+                                .strokeBorder(Color.black, lineWidth: 1))
+                            
+                            // password textfield
+                            TextField("Password", text: $password)
+                            .font(.system(size: 14))
+                            .padding(12)
+                            .background(RoundedRectangle(cornerRadius: 25)
+                                .strokeBorder(Color.black, lineWidth: 1))
+                            
+                            // first name textfield
+                            TextField("First Name", text: $firstName)
+                            .font(.system(size: 14))
+                            .padding(12)
+                            .background(RoundedRectangle(cornerRadius: 25)
+                                .strokeBorder(Color.black, lineWidth: 1))
+                            
+                            // last name textfield
+                            TextField("Last Name", text: $lastName)
+                            .font(.system(size: 14))
+                            .padding(12)
+                            .background(RoundedRectangle(cornerRadius: 25)
+                                .strokeBorder(Color.black, lineWidth: 1))
+                            
+                            // middle name textfield
+                            TextField("Middle Name", text: $middleName)
+                            .font(.system(size: 14))
+                            .padding(12)
+                            .background(RoundedRectangle(cornerRadius: 25)
+                                .strokeBorder(Color.black, lineWidth: 1))
+                        }
+                        
+                        Group {
+                            LabelledDivider(label: "Your Business")
+                            
+                            // business textfield
+                            TextField("Your Business", text: $business)
+                            .font(.system(size: 14))
+                            .padding(12)
+                            .background(RoundedRectangle(cornerRadius: 25)
+                                .strokeBorder(Color.black, lineWidth: 1))
+                            
+                            LabelledDivider(label: "Business Address")
+                            
+                            // business address
+                            TextField("Business Address", text: $businessAddr)
+                            .font(.system(size: 14))
+                            .padding(12)
+                            .background(RoundedRectangle(cornerRadius: 25)
+                                .strokeBorder(Color.black, lineWidth: 1))
+                        }
+
+                        
+                        // stack for attended market
+                        //Text("Attened Market").font(.system(size: 18, weight: .medium)).foregroundColor(Color.gray)
+                        Group {
+                            LabelledDivider(label: "Market")
+                            
+                            VStack(spacing: 5) {
+                                //ScrollView{
+                                    List {
+                                        ForEach(addedMarketList, id: \.self) { market in
+                                            //Text(self.marketList[$0]).tag($0)
+                                            Text(market)
+                                                .foregroundColor(.black)
+                                                .font(.system(size: 14))
+                                                .padding(5)
+                                                .frame(width: 250)
+                                            .background(RoundedRectangle(cornerRadius: 25)
+                                            .strokeBorder(Color.black, lineWidth: 1))
+                                        }
+                                        .onDelete(perform: deleteMarketListItem)
+
+                                        }
+                                    .frame(minHeight: 100, maxHeight: 200.0)
+                                //}
+                                //.frame(height: 100.0)
+                                
+                                
+                                Spacer()
+                                
+                                
+                                // Add market button
+                                Button(action: {
+                                    self.showModal.toggle()
+                                }){
+                                    Image(systemName: "plus.circle")
+                                        .font(.title)
+                                        .foregroundColor(.green)
+                                    
+                                    Text("Add Market")
+                                        .fontWeight(.semibold)
+                                        .font(.body)
+                                }.frame(width: 300)
+                                    
+                            }
+                            
+                            Group {
+                                LabelledDivider(label: "Create Account")
+                                
+                                // business textfield
+                                // Add market button
+                                HStack{
+                                    Button(action: {
+                                        //self.showModal.toggle()
+                                    }){
+                                        
+                                        Text("Create a new account for free")
+                                            .fontWeight(.semibold)
+                                            .font(.system(size: 14))
+                                    }
+                                    .background(RoundedRectangle(cornerRadius: 25)
+                                        .strokeBorder(Color.black, lineWidth: 1))
+                                    
+                                    Button(action: {
+                                        //self.showModal.toggle()
+                                    }){
+
+                                        Text("I already have an account")
+                                            .fontWeight(.semibold)
+                                            .font(.system(size: 14))
+                                    }
+                                    .background(RoundedRectangle(cornerRadius: 25)
+                                        .strokeBorder(Color.black, lineWidth: 1))
+                                }
+                                
+                                
+                                // terms of use
+                                Text("Terms of use")
+                                .font(.system(size: 14))
+                                .padding(5)
+                            }
+                            //DropDown(marketList: self.MarketList_Demo)
+
+
+                            /*
+                            NavigationLink(destination: MarketSearchView(selectedState: self.$selectedState, selectedCity: self.$selectedCity, selectedMarket: self.$selectedMarket, addedMarketList: self.$addedMarketList))
+                                    {
+                                        HStack{
+                                            Image(systemName: "plus.circle")
+                                                .font(.title)
+                                                .foregroundColor(.green)
+                                            
+                                            Text("Add Market")
+                                                .fontWeight(.semibold)
+                                                .font(.body)
+                                    }
+                                }
+                            }
+                            */
+
+                    }
+                } // scrollable view
+
             .padding(.horizontal,20)
-            .padding(.vertical,40)
+            .padding(.vertical,20)}
+            .sheet(isPresented: $showModal) {
+                //MarketSearchView(showModal: self.$showModal, selectedState: self.$selectedState, selectedCity: self.$selectedCity, selectedMarket: self.$selectedMarket, addedMarketList: self.$addedMarketList)
+                MarketSearchView(showModal: self.$showModal, addedMarketList: self.$addedMarketList)
         }
         
     }
-}
-
-struct DropDown: View {
-    @State var expand = false
-    @State private var marketIndex = 0
-    @State var marketList: [String] = []
     
-    var body: some View {
-        NavigationView{
-            Form{
-                Section {
-                    Picker(selection: $marketIndex, label: Text("Market")) {
-                        ForEach(0 ..< marketList.count) {
-                            Text(self.marketList[$0]).tag($0)
-                        }
-                    } // picker
-                } // section
-            }.navigationBarTitle((Text("Market")))
-        } // navigation view
+    func deleteMarketListItem(at offsets: IndexSet) {
+        self.addedMarketList.remove(atOffsets: offsets)
     }
 }
+
+
+
 
 
 // For preview usage
