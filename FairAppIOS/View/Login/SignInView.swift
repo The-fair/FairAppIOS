@@ -91,6 +91,7 @@ struct SignInView: View {
                 // email Input Text Field
                 TextField("Email address", text: $email)
                     .font(.system(size: 14))
+                    .autocapitalization(.none)
                     .padding(12)
                     .background(RoundedRectangle(cornerRadius: 25)
                         .strokeBorder(Color.black, lineWidth: 1))
@@ -98,6 +99,7 @@ struct SignInView: View {
                 // password input text field
                 SecureField("Password", text: $password)
                     .font(.system(size: 14))
+                    .autocapitalization(.none)
                     .padding(12)
                     .background(RoundedRectangle(cornerRadius: 25)
                         .strokeBorder(Color.black, lineWidth: 1))

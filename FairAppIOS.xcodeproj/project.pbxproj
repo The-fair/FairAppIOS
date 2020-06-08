@@ -8,10 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		16C434E6F1DA140451251003 /* Pods_FairAppIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F363346B189EA5809F2B98 /* Pods_FairAppIOS.framework */; };
+		640C706D2488497C004CCF62 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640C706C2488497C004CCF62 /* HomeView.swift */; };
+		640C706F24884A14004CCF62 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640C706E24884A14004CCF62 /* StoreView.swift */; };
+		640C707124884A22004CCF62 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640C707024884A22004CCF62 /* ProfileView.swift */; };
+		640C7079248DB215004CCF62 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640C7078248DB215004CCF62 /* ScheduleView.swift */; };
+		640C707B248DB221004CCF62 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640C707A248DB221004CCF62 /* ProductView.swift */; };
+		640C707D248DB22E004CCF62 /* DealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640C707C248DB22E004CCF62 /* DealView.swift */; };
+		640C707F248DB23A004CCF62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640C707E248DB23A004CCF62 /* ContentView.swift */; };
+		640C7081248DB244004CCF62 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640C7080248DB244004CCF62 /* OrderView.swift */; };
+		640C7083248DB250004CCF62 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640C7082248DB250004CCF62 /* MessageView.swift */; };
 		641BAF7A248568B700E220F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641BAF79248568B700E220F1 /* AppDelegate.swift */; };
 		641BAF7C248568B700E220F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641BAF7B248568B700E220F1 /* SceneDelegate.swift */; };
 		641BAF7F248568B700E220F1 /* FairAppIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 641BAF7D248568B700E220F1 /* FairAppIOS.xcdatamodeld */; };
-		641BAF81248568B700E220F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641BAF80248568B700E220F1 /* ContentView.swift */; };
+		641BAF81248568B700E220F1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641BAF80248568B700E220F1 /* MainView.swift */; };
 		641BAF83248568BA00E220F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641BAF82248568BA00E220F1 /* Assets.xcassets */; };
 		641BAF86248568BA00E220F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641BAF85248568BA00E220F1 /* Preview Assets.xcassets */; };
 		641BAF89248568BA00E220F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 641BAF87248568BA00E220F1 /* LaunchScreen.storyboard */; };
@@ -28,11 +37,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		640C706C2488497C004CCF62 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		640C706E24884A14004CCF62 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		640C707024884A22004CCF62 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		640C7078248DB215004CCF62 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		640C707A248DB221004CCF62 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		640C707C248DB22E004CCF62 /* DealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealView.swift; sourceTree = "<group>"; };
+		640C707E248DB23A004CCF62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		640C7080248DB244004CCF62 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		640C7082248DB250004CCF62 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		641BAF76248568B700E220F1 /* FairAppIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FairAppIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		641BAF79248568B700E220F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		641BAF7B248568B700E220F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		641BAF7E248568B700E220F1 /* FairAppIOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FairAppIOS.xcdatamodel; sourceTree = "<group>"; };
-		641BAF80248568B700E220F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		641BAF80248568B700E220F1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		641BAF82248568BA00E220F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		641BAF85248568BA00E220F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		641BAF88248568BA00E220F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,6 +89,94 @@
 				DCCFF96749B93925A04AB892 /* Pods-FairAppIOS.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		640C706824884928004CCF62 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				640C706B24884941004CCF62 /* ProfileView */,
+				640C706A24884938004CCF62 /* StoreView */,
+				640C706924884931004CCF62 /* HomeView */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		640C706924884931004CCF62 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				640C7077248DB204004CCF62 /* Message */,
+				640C7076248DB1FC004CCF62 /* OrderView */,
+				640C7075248DB1EF004CCF62 /* ContentView */,
+				640C7074248DB1EA004CCF62 /* DealView */,
+				640C7073248DB1E2004CCF62 /* ProductView */,
+				640C7072248DB1DA004CCF62 /* ScheduleView */,
+				640C706C2488497C004CCF62 /* HomeView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		640C706A24884938004CCF62 /* StoreView */ = {
+			isa = PBXGroup;
+			children = (
+				640C706E24884A14004CCF62 /* StoreView.swift */,
+			);
+			path = StoreView;
+			sourceTree = "<group>";
+		};
+		640C706B24884941004CCF62 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				640C707024884A22004CCF62 /* ProfileView.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		640C7072248DB1DA004CCF62 /* ScheduleView */ = {
+			isa = PBXGroup;
+			children = (
+				640C7078248DB215004CCF62 /* ScheduleView.swift */,
+			);
+			path = ScheduleView;
+			sourceTree = "<group>";
+		};
+		640C7073248DB1E2004CCF62 /* ProductView */ = {
+			isa = PBXGroup;
+			children = (
+				640C707A248DB221004CCF62 /* ProductView.swift */,
+			);
+			path = ProductView;
+			sourceTree = "<group>";
+		};
+		640C7074248DB1EA004CCF62 /* DealView */ = {
+			isa = PBXGroup;
+			children = (
+				640C707C248DB22E004CCF62 /* DealView.swift */,
+			);
+			path = DealView;
+			sourceTree = "<group>";
+		};
+		640C7075248DB1EF004CCF62 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				640C707E248DB23A004CCF62 /* ContentView.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		640C7076248DB1FC004CCF62 /* OrderView */ = {
+			isa = PBXGroup;
+			children = (
+				640C7080248DB244004CCF62 /* OrderView.swift */,
+			);
+			path = OrderView;
+			sourceTree = "<group>";
+		};
+		640C7077248DB204004CCF62 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				640C7082248DB250004CCF62 /* MessageView.swift */,
+			);
+			path = Message;
 			sourceTree = "<group>";
 		};
 		641BAF6D248568B700E220F1 = {
@@ -138,6 +244,7 @@
 		641BAF922485696D00E220F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				640C706824884928004CCF62 /* MainView */,
 				64B0D78B2485CC0800E3FAFA /* Component */,
 				64B0D78A2485CBF900E3FAFA /* Login */,
 			);
@@ -179,7 +286,7 @@
 		64B0D78A2485CBF900E3FAFA /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				641BAF80248568B700E220F1 /* ContentView.swift */,
+				641BAF80248568B700E220F1 /* MainView.swift */,
 				64B0D7882485C05C00E3FAFA /* AuthView.swift */,
 				648760802485D26500B12022 /* SignUpView.swift */,
 				648760822485D9A100B12022 /* SignInView.swift */,
@@ -321,17 +428,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				648760832485D9A100B12022 /* SignInView.swift in Sources */,
+				640C706D2488497C004CCF62 /* HomeView.swift in Sources */,
 				641BAF7A248568B700E220F1 /* AppDelegate.swift in Sources */,
 				64B0D7872485A46700E3FAFA /* SessionStore.swift in Sources */,
 				6487608E2486A93000B12022 /* NetworkManager.swift in Sources */,
 				6487608824860BE600B12022 /* MarketSearchView.swift in Sources */,
+				640C7083248DB250004CCF62 /* MessageView.swift in Sources */,
+				640C707F248DB23A004CCF62 /* ContentView.swift in Sources */,
 				64B0D7892485C05C00E3FAFA /* AuthView.swift in Sources */,
+				640C7079248DB215004CCF62 /* ScheduleView.swift in Sources */,
 				641BAF7F248568B700E220F1 /* FairAppIOS.xcdatamodeld in Sources */,
+				640C707124884A22004CCF62 /* ProfileView.swift in Sources */,
+				640C707B248DB221004CCF62 /* ProductView.swift in Sources */,
 				648760812485D26500B12022 /* SignUpView.swift in Sources */,
 				648760862485DF2200B12022 /* UserProfileConstants.swift in Sources */,
-				641BAF81248568B700E220F1 /* ContentView.swift in Sources */,
+				641BAF81248568B700E220F1 /* MainView.swift in Sources */,
+				640C707D248DB22E004CCF62 /* DealView.swift in Sources */,
 				641BAF7C248568B700E220F1 /* SceneDelegate.swift in Sources */,
 				6487608A24867B8C00B12022 /* TestContextMenu.swift in Sources */,
+				640C7081248DB244004CCF62 /* OrderView.swift in Sources */,
+				640C706F24884A14004CCF62 /* StoreView.swift in Sources */,
 				64B0D78D2485CC2B00E3FAFA /* LabelledDivider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

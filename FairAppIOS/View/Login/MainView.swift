@@ -10,7 +10,7 @@ import SwiftUI
 
 
 // this is the entrance of the app view
-struct ContentView: View {
+struct MainView: View {
     
     @EnvironmentObject var session: SessionStore
     
@@ -24,10 +24,32 @@ struct ContentView: View {
     var body: some View {
         Group {
             if (session.session != nil) {
+                TabView {
+                    HomeView()
+                        .tabItem {
+                            Image(systemName: "list.dash")
+                            Text("Home")
+                        }
+
+                    StoreView()
+                        .tabItem {
+                            Image(systemName: "square.and.pencil")
+                            Text("Store")
+                        }
+                    
+                    ProfileView()
+                        .tabItem {
+                            Image(systemName: "square.and.pencil")
+                            Text("Profile")
+                        }
+                }
+                
+                /*
                 Text("Welcome back user")
                 Button(action: session.signOut) {
                     Text("SignOut")
                 }
+                */
             }
             else {
                 //Text("Show auth screen")
@@ -37,8 +59,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(SessionStore())
+        MainView().environmentObject(SessionStore())
     }
 }

@@ -31,6 +31,7 @@ struct SignUpView: View {
     
     @State var business: String = ""
     @State var businessAddr: String = ""
+    @State var error: String = ""
     
     let MarketList_Demo = ["Market_A", "Market_B", "Market_C", "Market_D", "Market_E", "Market_F", "Market_G", "Market_H", "Market_G"]
     
@@ -39,19 +40,32 @@ struct SignUpView: View {
     
     // declare environment onbject session that could be shared through all the sub view
     @EnvironmentObject var session: SessionStore
+    @Environment(\.presentationMode) var presentationMode:Binding<PresentationMode>
     //@EnvironmentObject var marketInfoBindings: MarketInfoBindings
     
     // **************************************************
     //  drop down list for attended market
     // **************************************************
-    
+    func signUp(CompletionHandler: @escaping () -> Void) {
+        session.signUp(email: email, password: password) { (result, error) in
+            if let error = error {
+                self.error = error.localizedDescription
+                //print(error.localizedDescription)
+            }
+            else {
+                self.email = ""
+                self.password = ""
+                CompletionHandler()
+            }
+            
+        }
+    }
     
     // **************************************************
     //  main bodhy of sign up view
     // **************************************************
     var body: some View {
         ScrollView(.vertical){
-
                 // Main Stack
                     VStack {
                         Text("Fill In Your Account Information")
@@ -66,13 +80,15 @@ struct SignUpView: View {
                             // email textfield
                             TextField("Email", text: $email)
                             .font(.system(size: 14))
+                                .autocapitalization(.none)
                             .padding(12)
                             .background(RoundedRectangle(cornerRadius: 25)
                                 .strokeBorder(Color.black, lineWidth: 1))
                             
                             // password textfield
-                            TextField("Password", text: $password)
+                            SecureField("Password", text: $password)
                             .font(.system(size: 14))
+                                .autocapitalization(.none)
                             .padding(12)
                             .background(RoundedRectangle(cornerRadius: 25)
                                 .strokeBorder(Color.black, lineWidth: 1))
@@ -122,6 +138,7 @@ struct SignUpView: View {
                         
                         // stack for attended market
                         //Text("Attened Market").font(.system(size: 18, weight: .medium)).foregroundColor(Color.gray)
+                        
                         Group {
                             LabelledDivider(label: "Market")
                             
@@ -142,12 +159,8 @@ struct SignUpView: View {
 
                                         }
                                     .frame(minHeight: 100, maxHeight: 200.0)
-                                //}
-                                //.frame(height: 100.0)
-                                
-                                
+
                                 Spacer()
-                                
                                 
                                 // Add market button
                                 Button(action: {
@@ -171,26 +184,26 @@ struct SignUpView: View {
                                 // Add market button
                                 HStack{
                                     Button(action: {
-                                        //self.showModal.toggle()
+                                        self.signUp() {
+                                            //self.presentationMode.wrappedValue.dismiss()
+                                        }
                                     }){
-                                        
                                         Text("Create a new account for free")
                                             .fontWeight(.semibold)
                                             .font(.system(size: 14))
                                     }
                                     .background(RoundedRectangle(cornerRadius: 25)
-                                        .strokeBorder(Color.black, lineWidth: 1))
+                                    .strokeBorder(Color.black, lineWidth: 1))
                                     
                                     Button(action: {
                                         //self.showModal.toggle()
                                     }){
-
                                         Text("I already have an account")
                                             .fontWeight(.semibold)
                                             .font(.system(size: 14))
                                     }
                                     .background(RoundedRectangle(cornerRadius: 25)
-                                        .strokeBorder(Color.black, lineWidth: 1))
+                                    .strokeBorder(Color.black, lineWidth: 1))
                                 }
                                 
                                 
@@ -199,25 +212,6 @@ struct SignUpView: View {
                                 .font(.system(size: 14))
                                 .padding(5)
                             }
-                            //DropDown(marketList: self.MarketList_Demo)
-
-
-                            /*
-                            NavigationLink(destination: MarketSearchView(selectedState: self.$selectedState, selectedCity: self.$selectedCity, selectedMarket: self.$selectedMarket, addedMarketList: self.$addedMarketList))
-                                    {
-                                        HStack{
-                                            Image(systemName: "plus.circle")
-                                                .font(.title)
-                                                .foregroundColor(.green)
-                                            
-                                            Text("Add Market")
-                                                .fontWeight(.semibold)
-                                                .font(.body)
-                                    }
-                                }
-                            }
-                            */
-
                     }
                 } // scrollable view
 
@@ -230,6 +224,9 @@ struct SignUpView: View {
         
     }
     
+    // **************************************************
+    //  delete the market from the markey list
+    // **************************************************
     func deleteMarketListItem(at offsets: IndexSet) {
         self.addedMarketList.remove(atOffsets: offsets)
     }
