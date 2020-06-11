@@ -20,6 +20,14 @@ struct SignUpView: View {
     @State var email: String = ""
     @State var password: String = ""
     
+    // for test
+    @State var entityName: String = ""
+    @State var streetAddr: String = ""
+    @State var city: String = ""
+    @State var state: String = ""
+    @State var zipCode: String = ""
+    
+    
     //@State var marketList: [String] = []
     @State private var marketList = ["Market_A", "Market_B", "Market_C", "Market_D", "Market_E", "Market_F", "Market_G", "Market_H", "Market_G"]
     @State var addedMarketList: [String] = []
@@ -46,7 +54,9 @@ struct SignUpView: View {
     // **************************************************
     //  drop down list for attended market
     // **************************************************
-    func signUp(CompletionHandler: @escaping () -> Void) {
+    func signUpInFirebase(CompletionHandler: @escaping () -> Void) {
+        
+        // register user information into firebase authentication
         session.signUp(email: email, password: password) { (result, error) in
             if let error = error {
                 self.error = error.localizedDescription
@@ -184,8 +194,11 @@ struct SignUpView: View {
                                 // Add market button
                                 HStack{
                                     Button(action: {
-                                        self.signUp() {
+                                        self.signUpInFirebase() {
                                             //self.presentationMode.wrappedValue.dismiss()
+                                            self.signUpInServer() {
+                                                
+                                            }
                                         }
                                     }){
                                         Text("Create a new account for free")
@@ -229,6 +242,30 @@ struct SignUpView: View {
     // **************************************************
     func deleteMarketListItem(at offsets: IndexSet) {
         self.addedMarketList.remove(atOffsets: offsets)
+    }
+    
+    
+    // **************************************************
+    //  sign up into server
+    // **************************************************
+    func signUpInServer(CompletionHandler: @escaping () -> Void) {
+        let urlString = ""
+        
+        guard let url = URL(string: "") else { return }
+        
+        let body: [String: String] = ["firstname": self.firstName, "lastname": self.lastName, "email": self.email, "pw": self.password, "entityName": self.entityName, "streetAddr": self.streetAddr, "city": self.city, "state": self.state, "zipCode": self.zipCode]
+        
+        let finalBody = try! JSONSerialization.data(withJSONObject: body)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = finalBody
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            print(data)
+        }.resume()
     }
 }
 

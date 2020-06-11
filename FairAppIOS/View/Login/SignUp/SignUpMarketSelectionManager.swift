@@ -10,7 +10,7 @@
 import Foundation
 import Combine
 
-class NetworkManager: ObservableObject {
+class SignUpMarketSelectionManager: ObservableObject {
     
     @Published var stateList = ["NY", "AZ"]
     

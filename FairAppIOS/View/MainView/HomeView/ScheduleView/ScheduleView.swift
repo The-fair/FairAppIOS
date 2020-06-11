@@ -11,8 +11,13 @@ import SwiftUI
 
 struct ScheduleView: View {
     var body: some View {
-        Text("ScheduleView")
+        VStack {
+            Text("ScheduleView")
+        }
+        .navigationBarTitle(Text("Schedule"), displayMode: .inline)
+
     }
+    
 }
 
 struct ScheduleView_Previews: PreviewProvider {

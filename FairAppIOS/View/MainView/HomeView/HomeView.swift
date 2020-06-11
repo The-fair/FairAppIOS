@@ -124,42 +124,42 @@ struct HomeView: View {
     // function to navigate to schedule view
     // **************************************************
     func navigateToScheduleView() {
-        ScheduleView()
+        //ScheduleView()
     }
     
     // **************************************************
     // function to navigate to product view
     // **************************************************
     func navigateToProductView() {
-        ProductView()
+        //ProductView()
     }
     
     // **************************************************
     // function to navigate to deal view
     // **************************************************
     func navigateToDealView() {
-        DealView()
+        //DealView()
     }
     
     // **************************************************
     // function to navigate to content view
     // **************************************************
     func navigateToContentView() {
-        ContentView()
+        //ContentView()
     }
     
     // **************************************************
     // function to navigate to order view
     // **************************************************
     func navigateToOrderView() {
-        OrderView()
+        //OrderView()
     }
     
     // **************************************************
     // function to navigate to message view
     // **************************************************
     func navigateToMessageView() {
-        MessageView()
+        //MessageView()
     }
 }
 

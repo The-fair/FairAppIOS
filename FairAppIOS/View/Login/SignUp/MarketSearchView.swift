@@ -13,7 +13,7 @@ import Combine
 
 struct MarketSearchView: View {
     
-    @ObservedObject var networkManager = NetworkManager()
+    @ObservedObject var networkManager = SignUpMarketSelectionManager()
     
     //@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -43,7 +43,7 @@ struct MarketSearchView: View {
 
 struct StateDropDownMenu: View {
     
-    @ObservedObject var networkManager = NetworkManager()
+    @ObservedObject var networkManager = SignUpMarketSelectionManager()
     
     @State private var selectedStateIndex = 0
     @State private var selectedCityIndex = 0
