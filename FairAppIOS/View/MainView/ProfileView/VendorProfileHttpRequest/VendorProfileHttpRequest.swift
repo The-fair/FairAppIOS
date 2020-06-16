@@ -9,14 +9,12 @@
 import Foundation
 import SwiftUI
 
-struct UserProfileHttpRequestResponse: Codable {
-    var results: [UserProfileHttpRequestResult]
+struct VendorProfileHttpRequestResponse: Codable {
+    var results: [VendorProfileHttpRequestResult]
 }
 
-struct UserProfileHttpRequestResult: Codable {
-    //var firstName: Int
-    //var lastName: String
-    //var collectionName: String
+struct VendorProfileHttpRequestResult: Codable {
+
     
     var pw: String
     var firstname: String
@@ -27,6 +25,5 @@ struct UserProfileHttpRequestResult: Codable {
     var city: String
     var state: String
     var zipCode: String
-    
     
 }

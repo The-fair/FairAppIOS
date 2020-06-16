@@ -18,7 +18,7 @@ struct SignInView: View {
     @State var error: String = ""
     
     // declare environment onbject session that could be shared through all the sub view
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var session: AuthSessionStore
     
     
     // **************************************************

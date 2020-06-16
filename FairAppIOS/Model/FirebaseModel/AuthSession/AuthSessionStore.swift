@@ -11,8 +11,8 @@ import SwiftUI
 import Firebase
 import Combine
 
-class SessionStore: ObservableObject {
-    var didChange = PassthroughSubject<SessionStore, Never>()
+class AuthSessionStore: ObservableObject {
+    var didChange = PassthroughSubject<AuthSessionStore, Never>()
     
     // declare a session that publish itself on change
     @Published var session: User? {

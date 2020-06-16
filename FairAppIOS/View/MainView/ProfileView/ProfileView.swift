@@ -14,7 +14,7 @@ import Combine
 let FILE_NAME = "User/tangmac@live.cn/portrait_image/portrait_image_test.jpeg"
 
 struct ProfileView: View {
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var session: AuthSessionStore
     
     @State var shown = false
     @State var imageURL = ""
@@ -23,7 +23,7 @@ struct ProfileView: View {
     @State var lastName = ""
     @State var emailAddr = ""
     
-    @State var results = [Result]()
+    @State var results = [VendorProfileHttpRequestResult]()
     
     
     var body: some View {
@@ -106,13 +106,15 @@ struct ProfileView: View {
                             .strokeBorder(Color.black, lineWidth: 1))
                     }.padding()
                     
-                    List(results, id: \.trackId) { item in
+                    
+                    List(results, id: \.email) { item in
                         VStack(alignment: .leading) {
-                            Text(item.trackName)
+                            Text(item.firstname)
                                 .font(.headline)
-                            Text(item.collectionName)
+                            Text(item.lastname)
                         }
                     }
+                    
 
                 }
             }
@@ -153,7 +155,11 @@ struct ProfileView: View {
     //  load the data from the google cloud backend
     // **************************************************
     func loadSampleDataFromGoogleCloud() {
-        guard let url = URL(string: "https://itunes.apple.com/search?term=taylor+swift&entity=song") else {
+        
+        let urlString = NetworkConstants.DatabaseConstants.BaseIpAddr + NetworkConstants.DatabaseConstants.Colon +
+            NetworkConstants.DatabaseConstants.PortNumber + NetworkConstants.DatabaseConstants.ApiRoute + NetworkConstants.VendorCollectionConstants.BaseRoute + NetworkConstants.VendorCollectionConstants.GetVendorList
+        
+        guard let url = URL(string: urlString) else {
             print("Invalid URL")
             return
         }
@@ -161,9 +167,11 @@ struct ProfileView: View {
         let request = URLRequest(url: url)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
-            // step 4
             if let data = data {
-                if let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) {
+                
+                //print(data)
+                
+                if let decodedResponse = try? JSONDecoder().decode(VendorProfileHttpRequestResponse.self, from: data) {
                     // we have good data – go back to the main thread
                     DispatchQueue.main.async {
                         // update our UI
@@ -175,7 +183,7 @@ struct ProfileView: View {
                 }
             }
 
-            // if we're still here it means there was a problem
+            // display error message sent from the server or local unknown error
             print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
         }.resume()
         

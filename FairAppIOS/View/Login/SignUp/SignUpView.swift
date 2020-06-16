@@ -20,12 +20,11 @@ struct SignUpView: View {
     @State var email: String = ""
     @State var password: String = ""
     
-    // for test
-    @State var entityName: String = ""
+    @State var entityName: String = "testname"
     @State var streetAddr: String = ""
     @State var city: String = ""
     @State var state: String = ""
-    @State var zipCode: String = ""
+    @State var zipCode: String = "123456"
     
     
     //@State var marketList: [String] = []
@@ -47,29 +46,9 @@ struct SignUpView: View {
     
     
     // declare environment onbject session that could be shared through all the sub view
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var session: AuthSessionStore
     @Environment(\.presentationMode) var presentationMode:Binding<PresentationMode>
     //@EnvironmentObject var marketInfoBindings: MarketInfoBindings
-    
-    // **************************************************
-    //  drop down list for attended market
-    // **************************************************
-    func signUpInFirebase(CompletionHandler: @escaping () -> Void) {
-        
-        // register user information into firebase authentication
-        session.signUp(email: email, password: password) { (result, error) in
-            if let error = error {
-                self.error = error.localizedDescription
-                //print(error.localizedDescription)
-            }
-            else {
-                self.email = ""
-                self.password = ""
-                CompletionHandler()
-            }
-            
-        }
-    }
     
     // **************************************************
     //  main bodhy of sign up view
@@ -106,6 +85,7 @@ struct SignUpView: View {
                             // first name textfield
                             TextField("First Name", text: $firstName)
                             .font(.system(size: 14))
+                            .autocapitalization(.none)
                             .padding(12)
                             .background(RoundedRectangle(cornerRadius: 25)
                                 .strokeBorder(Color.black, lineWidth: 1))
@@ -113,6 +93,7 @@ struct SignUpView: View {
                             // last name textfield
                             TextField("Last Name", text: $lastName)
                             .font(.system(size: 14))
+                            .autocapitalization(.none)
                             .padding(12)
                             .background(RoundedRectangle(cornerRadius: 25)
                                 .strokeBorder(Color.black, lineWidth: 1))
@@ -120,6 +101,7 @@ struct SignUpView: View {
                             // middle name textfield
                             TextField("Middle Name", text: $middleName)
                             .font(.system(size: 14))
+                            .autocapitalization(.none)
                             .padding(12)
                             .background(RoundedRectangle(cornerRadius: 25)
                                 .strokeBorder(Color.black, lineWidth: 1))
@@ -131,6 +113,7 @@ struct SignUpView: View {
                             // business textfield
                             TextField("Your Business", text: $business)
                             .font(.system(size: 14))
+                            .autocapitalization(.none)
                             .padding(12)
                             .background(RoundedRectangle(cornerRadius: 25)
                                 .strokeBorder(Color.black, lineWidth: 1))
@@ -140,6 +123,7 @@ struct SignUpView: View {
                             // business address
                             TextField("Business Address", text: $businessAddr)
                             .font(.system(size: 14))
+                            .autocapitalization(.none)
                             .padding(12)
                             .background(RoundedRectangle(cornerRadius: 25)
                                 .strokeBorder(Color.black, lineWidth: 1))
@@ -244,14 +228,34 @@ struct SignUpView: View {
         self.addedMarketList.remove(atOffsets: offsets)
     }
     
+    // **************************************************
+    //  drop down list for attended market
+    // **************************************************
+    func signUpInFirebase(CompletionHandler: @escaping () -> Void) {
+        
+        // register user information into firebase authentication
+        session.signUp(email: email, password: password) { (result, error) in
+            if let error = error {
+                self.error = error.localizedDescription
+                //print(error.localizedDescription)
+            }
+            else {
+                //self.email = ""
+                //self.password = ""
+                CompletionHandler()
+            }
+            
+        }
+    }
+    
     
     // **************************************************
     //  sign up into server
     // **************************************************
     func signUpInServer(CompletionHandler: @escaping () -> Void) {
-        let urlString = ""
+        let urlString = NetworkConstants.DatabaseConstants.BaseIpAddr + NetworkConstants.DatabaseConstants.Colon + NetworkConstants.DatabaseConstants.PortNumber +  NetworkConstants.DatabaseConstants.ApiRoute + NetworkConstants.VendorCollectionConstants.BaseRoute + NetworkConstants.VendorCollectionConstants.AddNewVendorRoute
         
-        guard let url = URL(string: "") else { return }
+        guard let url = URL(string: urlString) else { return }
         
         let body: [String: String] = ["firstname": self.firstName, "lastname": self.lastName, "email": self.email, "pw": self.password, "entityName": self.entityName, "streetAddr": self.streetAddr, "city": self.city, "state": self.state, "zipCode": self.zipCode]
         
