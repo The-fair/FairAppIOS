@@ -9,11 +9,16 @@
 import Foundation
 
 struct ProductListElement {
+    var id = UUID()
+    var productId: String = ""
     var imageURL: String = ""
     var productTitle: String = ""
     var unitPriceInDollarPerPound: String = ""
     var enableStatus: Bool = true
     var tagCategory: String = ""
     var description: String = ""
-    var descriptionExtend: Bool = false
+    var descriptionExpand: Bool = false
+    
+    // initializer
+    
 }

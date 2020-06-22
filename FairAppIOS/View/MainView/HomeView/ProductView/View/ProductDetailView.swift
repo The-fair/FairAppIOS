@@ -7,3 +7,19 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct ProductDetailView: View {
+    
+    //@State var productDetailInfo: ProductListElement
+    
+    var body: some View {
+        Text("Product Detail")
+    }
+}
+
+struct ProductDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProductDetailView()
+    }
+}

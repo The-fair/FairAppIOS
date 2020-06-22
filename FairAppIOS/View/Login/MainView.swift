@@ -37,7 +37,7 @@ struct MainView: View {
                             Text("Store")
                         }
                     
-                    ProfileView()
+                    AccountInfoView()
                         .tabItem {
                             Image(systemName: "square.and.pencil")
                             Text("Profile")

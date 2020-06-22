@@ -134,6 +134,7 @@ struct SignUpView: View {
                         //Text("Attened Market").font(.system(size: 18, weight: .medium)).foregroundColor(Color.gray)
                         
                         Group {
+                            /*
                             LabelledDivider(label: "Market")
                             
                             VStack(spacing: 5) {
@@ -170,7 +171,7 @@ struct SignUpView: View {
                                 }.frame(width: 300)
                                     
                             }
-                            
+                            */
                             Group {
                                 LabelledDivider(label: "Create Account")
                                 
