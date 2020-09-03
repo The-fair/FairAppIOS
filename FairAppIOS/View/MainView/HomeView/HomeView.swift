@@ -10,18 +10,26 @@ import Foundation
 import SwiftUI
 
 struct HomeView: View {
+    
+    let ModuleIconPair = ["Schedule":"calendar",
+                          "Product":"calendar",
+                          "Deal":"calendar",
+                          "Content":"calendar",
+                          "Order":"calendar",
+                          "Message":"calendar"]
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 40) {
-                
                 // first row stack
                 HStack(spacing: 80) {
                     NavigationLink(destination: ScheduleView()) {
                     // schedule section button
                     //Button(action: self.navigateToScheduleView) {
                         VStack {
-                            Image(systemName: "pencil")
+                            Image(systemName: ModuleIconPair["Schedule"]!)
                             Text("Schedule")
+                                .foregroundColor(Color.green)
                             .frame(width: 80, height: 20, alignment: .center)
                         }
                     }
@@ -35,8 +43,9 @@ struct HomeView: View {
                     NavigationLink(destination: ProductView()) {
                     //Button(action: self.navigateToProductView) {
                         VStack {
-                            Image(systemName: "pencil")
+                            Image(systemName: ModuleIconPair["Product"]!)
                             Text("Product")
+                            .foregroundColor(Color.green)
                             .frame(width: 80, height: 20, alignment: .center)
                         }
                     }
@@ -55,8 +64,9 @@ struct HomeView: View {
                     NavigationLink(destination: DealView()) {
                     //Button(action: self.navigateToDealView) {
                         VStack {
-                            Image(systemName: "pencil")
+                            Image(systemName: ModuleIconPair["Deal"]!)
                             Text("Deal")
+                            .foregroundColor(Color.green)
                             .frame(width: 80, height: 20, alignment: .center)
                         }
                         .font(.system(size: 14))
@@ -70,8 +80,9 @@ struct HomeView: View {
                     NavigationLink(destination: ContentView()) {
                     //Button(action: self.navigateToContentView) {
                         VStack {
-                            Image(systemName: "pencil")
+                            Image(systemName: ModuleIconPair["Content"]!)
                             Text("Content")
+                            .foregroundColor(Color.green)
                             .frame(width: 80, height: 20, alignment: .center)
                         }
                     }
@@ -89,8 +100,9 @@ struct HomeView: View {
                     NavigationLink(destination: OrderView()) {
                     //Button(action: self.navigateToOrderView) {
                         VStack {
-                            Image(systemName: "pencil")
+                            Image(systemName: ModuleIconPair["Order"]!)
                             Text("Order")
+                            .foregroundColor(Color.green)
                             .frame(width: 80, height: 20, alignment: .center)
                         }
                     }
@@ -103,8 +115,9 @@ struct HomeView: View {
                     NavigationLink(destination: MessageView()) {
                     //Button(action: self.navigateToMessageView) {
                         VStack {
-                            Image(systemName: "pencil")
+                            Image(systemName: ModuleIconPair["Message"]!)
                             Text("Message")
+                            .foregroundColor(Color.green)
                             .frame(width: 80, height: 20, alignment: .center)
                         }
                     }
@@ -124,42 +137,42 @@ struct HomeView: View {
     // function to navigate to schedule view
     // **************************************************
     func navigateToScheduleView() {
-        ScheduleView()
+        //ScheduleView()
     }
     
     // **************************************************
     // function to navigate to product view
     // **************************************************
     func navigateToProductView() {
-        ProductView()
+        //ProductView()
     }
     
     // **************************************************
     // function to navigate to deal view
     // **************************************************
     func navigateToDealView() {
-        DealView()
+        //DealView()
     }
     
     // **************************************************
     // function to navigate to content view
     // **************************************************
     func navigateToContentView() {
-        ContentView()
+        //ContentView()
     }
     
     // **************************************************
     // function to navigate to order view
     // **************************************************
     func navigateToOrderView() {
-        OrderView()
+        //OrderView()
     }
     
     // **************************************************
     // function to navigate to message view
     // **************************************************
     func navigateToMessageView() {
-        MessageView()
+        //MessageView()
     }
 }
 

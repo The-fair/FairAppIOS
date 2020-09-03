@@ -12,7 +12,7 @@ import SwiftUI
 // this is the entrance of the app view
 struct MainView: View {
     
-    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var session: AuthSessionStore
     
     // **************************************************
     //  the function to get session user status
@@ -37,7 +37,7 @@ struct MainView: View {
                             Text("Store")
                         }
                     
-                    ProfileView()
+                    AccountInfoView()
                         .tabItem {
                             Image(systemName: "square.and.pencil")
                             Text("Profile")
@@ -53,7 +53,8 @@ struct MainView: View {
             }
             else {
                 //Text("Show auth screen")
-                AuthView()
+                //AuthView()
+                PreLoginView()
             }
         }.onAppear(perform: getUser)
     }
@@ -61,6 +62,7 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView().environmentObject(SessionStore())
+        //MainView().environmentObject(AuthSessionStore())
+        PreLoginView()
     }
 }

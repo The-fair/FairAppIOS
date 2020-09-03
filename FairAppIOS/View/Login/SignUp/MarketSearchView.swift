@@ -13,7 +13,7 @@ import Combine
 
 struct MarketSearchView: View {
     
-    @ObservedObject var networkManager = NetworkManager()
+    @ObservedObject var networkManager = SignUpMarketSelectionManager()
     
     //@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -21,10 +21,13 @@ struct MarketSearchView: View {
     //@State var selectedCity: String
     //@State var selectedMarket: String
     //@State var addedMarketList: [String]
+    
     @Binding var showModal: Bool
+    
     //@Binding var selectedState: String
     //@Binding var selectedCity: String
     //@Binding var selectedMarket: String
+    
     @Binding var addedMarketList: [String]
 
     var count = 0
@@ -32,7 +35,9 @@ struct MarketSearchView: View {
     var body: some View {
         VStack{
             StateDropDownMenu()
+            
             //Text("hello")
+            
             Button("Add Market") {
                 self.addedMarketList.append("market \(Date())")
                 self.showModal.toggle()
@@ -43,7 +48,7 @@ struct MarketSearchView: View {
 
 struct StateDropDownMenu: View {
     
-    @ObservedObject var networkManager = NetworkManager()
+    @ObservedObject var networkManager = SignUpMarketSelectionManager()
     
     @State private var selectedStateIndex = 0
     @State private var selectedCityIndex = 0
