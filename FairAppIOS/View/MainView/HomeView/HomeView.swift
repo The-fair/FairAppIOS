@@ -18,12 +18,17 @@ struct HomeView: View {
                           "Order":"calendar",
                           "Message":"calendar"]
     
+    
+    // binding environment object
+    //let schedule_setting = Schedule_Setting()
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 40) {
                 // first row stack
                 HStack(spacing: 80) {
                     NavigationLink(destination: ScheduleView()) {
+                        //.environmentObject(schedule_setting)) {
                     // schedule section button
                     //Button(action: self.navigateToScheduleView) {
                         VStack {
