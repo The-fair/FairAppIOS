@@ -85,25 +85,9 @@ struct ProductView: View {
                     Text("Add")
                 }
         )
-        //.onAppear(perform: self.generateDemoProductList)
-        
-        /*
-         GeometryReader { geometry in
-         //.position(x:0, y: 150)
-         }   // geometry reader
-         */
-        
-        /*
-         Group {
-         
-         //.frame(width: geometry.size.width, height: 100)
-         }
-         */
-        //
         
         
     }
-    //}
 }
 
 
@@ -190,17 +174,18 @@ struct ProductRowView: View {
                             
                             //Spacer()
                             
-                            Button(action: {
-                                self.deleteProductFromListById(objectID: product.productId)
-                            }) {
-                                Text("Delete")
-                            }
+//                            Button(action: {
+//                                self.deleteProductFromListById(objectID: product.productId)
+//                            }) {
+//                                Text("Delete")
+//                            }
                             //Toggle(isOn: )
                         }   // VStack
                             .padding()
                     }   //  HStack
                 }   // VStack
             }
+            .onDelete(perform: self.delete)
             
         }   // List
         //}   // Navigation
@@ -210,7 +195,14 @@ struct ProductRowView: View {
     // function to delete the product from the list
     // **************************************************
     func deleteProductFromListById(objectID: String) {
-        
+        print("delete")
+    }
+    
+    func delete(at offsets: IndexSet) {
+        //users.remove(atOffsets: offsets)
+        //productList[offsets]
+        let index = offsets[offsets.startIndex]
+        print("\(index)")
     }
 }
 

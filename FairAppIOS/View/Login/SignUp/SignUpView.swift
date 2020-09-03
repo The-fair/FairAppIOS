@@ -22,9 +22,7 @@ struct SignUpView: View {
     
     @State var entityName: String = "testname"
     @State var streetAddr: String = ""
-    @State var city: String = ""
-    @State var state: String = ""
-    @State var zipCode: String = "123456"
+    @State var zipCode: String = ""
     
     
     //@State var marketList: [String] = []
@@ -37,7 +35,13 @@ struct SignUpView: View {
     @State private var showModal: Bool = false
     
     @State var business: String = ""
-    @State var businessAddr: String = ""
+    
+    @State var businessAddr_line1: String = ""
+    @State var businessAddr_line2: String = ""
+    @State var businessAddr_city: String = ""
+    @State var businessAddr_state: String = ""
+    
+    
     @State var error: String = ""
     
     let MarketList_Demo = ["Market_A", "Market_B", "Market_C", "Market_D", "Market_E", "Market_F", "Market_G", "Market_H", "Market_G"]
@@ -98,13 +102,13 @@ struct SignUpView: View {
                             .background(RoundedRectangle(cornerRadius: 25)
                                 .strokeBorder(Color.black, lineWidth: 1))
                             
-                            // middle name textfield
-                            TextField("Middle Name", text: $middleName)
-                            .font(.system(size: 14))
-                            .autocapitalization(.none)
-                            .padding(12)
-                            .background(RoundedRectangle(cornerRadius: 25)
-                                .strokeBorder(Color.black, lineWidth: 1))
+//                            // middle name textfield
+//                            TextField("Middle Name", text: $middleName)
+//                            .font(.system(size: 14))
+//                            .autocapitalization(.none)
+//                            .padding(12)
+//                            .background(RoundedRectangle(cornerRadius: 25)
+//                                .strokeBorder(Color.black, lineWidth: 1))
                         }
                         
                         Group {
@@ -121,66 +125,54 @@ struct SignUpView: View {
                             LabelledDivider(label: "Business Address")
                             
                             // business address
-                            TextField("Business Address", text: $businessAddr)
+                            TextField("Business Address Line#1", text: $businessAddr_line1)
+                            .font(.system(size: 14))
+                            .autocapitalization(.none)
+                            .padding(12)
+                            .background(RoundedRectangle(cornerRadius: 25)
+                                .strokeBorder(Color.black, lineWidth: 1))
+                            
+                            TextField("Business Address Line#2 (Optional)", text: $businessAddr_line2)
+                            .font(.system(size: 14))
+                            .autocapitalization(.none)
+                            .padding(12)
+                            .background(RoundedRectangle(cornerRadius: 25)
+                                .strokeBorder(Color.black, lineWidth: 1))
+                            
+                            HStack {
+                                // business address
+                                TextField("City", text: $businessAddr_city)
+                                .font(.system(size: 14))
+                                .autocapitalization(.none)
+                                .padding(12)
+                                .background(RoundedRectangle(cornerRadius: 25)
+                                    .strokeBorder(Color.black, lineWidth: 1))
+                                
+                                TextField("State", text: $businessAddr_state)
+                                .font(.system(size: 14))
+                                .autocapitalization(.none)
+                                .padding(12)
+                                .background(RoundedRectangle(cornerRadius: 25)
+                                    .strokeBorder(Color.black, lineWidth: 1))
+                            }
+                            
+                            TextField("Zip Code", text: $zipCode)
                             .font(.system(size: 14))
                             .autocapitalization(.none)
                             .padding(12)
                             .background(RoundedRectangle(cornerRadius: 25)
                                 .strokeBorder(Color.black, lineWidth: 1))
                         }
-
-                        
-                        // stack for attended market
-                        //Text("Attened Market").font(.system(size: 18, weight: .medium)).foregroundColor(Color.gray)
                         
                         Group {
-                            /*
-                            LabelledDivider(label: "Market")
-                            
-                            VStack(spacing: 5) {
-                                //ScrollView{
-                                    List {
-                                        ForEach(addedMarketList, id: \.self) { market in
-                                            //Text(self.marketList[$0]).tag($0)
-                                            Text(market)
-                                                .foregroundColor(.black)
-                                                .font(.system(size: 14))
-                                                .padding(5)
-                                                .frame(width: 250)
-                                            .background(RoundedRectangle(cornerRadius: 25)
-                                            .strokeBorder(Color.black, lineWidth: 1))
-                                        }
-                                        .onDelete(perform: deleteMarketListItem)
-
-                                        }
-                                    .frame(minHeight: 100, maxHeight: 200.0)
-
-                                Spacer()
-                                
-                                // Add market button
-                                Button(action: {
-                                    self.showModal.toggle()
-                                }){
-                                    Image(systemName: "plus.circle")
-                                        .font(.title)
-                                        .foregroundColor(.green)
-                                    
-                                    Text("Add Market")
-                                        .fontWeight(.semibold)
-                                        .font(.body)
-                                }.frame(width: 300)
-                                    
-                            }
-                            */
                             Group {
                                 LabelledDivider(label: "Create Account")
                                 
                                 // business textfield
                                 // Add market button
-                                HStack{
+                                VStack(alignment: .center, spacing: 10){
                                     Button(action: {
                                         self.signUpInFirebase() {
-                                            //self.presentationMode.wrappedValue.dismiss()
                                             self.signUpInServer() {
                                                 
                                             }
@@ -189,9 +181,20 @@ struct SignUpView: View {
                                         Text("Create a new account for free")
                                             .fontWeight(.semibold)
                                             .font(.system(size: 14))
+                                        .padding(12)
+                                            //.multilineTextAlignment(.center)
+                                            //.lineLimit(2)
+                                            //.fixedSize(horizontal: false, vertical: true)
                                     }
-                                    .background(RoundedRectangle(cornerRadius: 25)
+                                    .frame(maxWidth: .infinity)
+                                    .background(RoundedRectangle(cornerRadius: 15)
                                     .strokeBorder(Color.black, lineWidth: 1))
+                                    .padding()
+//                                    .frame(minWidth: 0, maxWidth: .infinity)
+//                                    .padding()
+//                                    .foregroundColor(.white)
+//                                    .background(LinearGradient(gradient: Gradient(colors: [Color("DarkGreen"), Color("LightGreen")]), startPoint: .leading, endPoint: .trailing))
+//                                    .cornerRadius(40)
                                     
                                     Button(action: {
                                         //self.showModal.toggle()
@@ -199,24 +202,34 @@ struct SignUpView: View {
                                         Text("I already have an account")
                                             .fontWeight(.semibold)
                                             .font(.system(size: 14))
+                                        .padding(12)
+                                            //.multilineTextAlignment(.center)
+                                            //.lineLimit(2)
+                                        //.fixedSize(horizontal: false, vertical: true)
                                     }
-                                    .background(RoundedRectangle(cornerRadius: 25)
+                                    .frame(maxWidth: .infinity)
+                                    .background(RoundedRectangle(cornerRadius: 15)
                                     .strokeBorder(Color.black, lineWidth: 1))
+                                    .padding()
+//                                    .frame(minWidth: 0, maxWidth: .infinity)
+//                                    .padding()
+//                                    .foregroundColor(.white)
+//                                    .background(LinearGradient(gradient: Gradient(colors: [Color("DarkGreen"), Color("LightGreen")]), startPoint: .leading, endPoint: .trailing))
+//                                    .cornerRadius(40)
                                 }
-                                
+//                                .padding()
                                 
                                 // terms of use
-                                Text("Terms of use")
+                                Text("By Clicking on \"Create Account\" means you agree with our Terms of use")
                                 .font(.system(size: 14))
                                 .padding(5)
                             }
                     }
                 } // scrollable view
 
-            .padding(.horizontal,20)
-            .padding(.vertical,20)}
+            .padding(.horizontal, 20)
+            .padding(.vertical, 20)}
             .sheet(isPresented: $showModal) {
-                //MarketSearchView(showModal: self.$showModal, selectedState: self.$selectedState, selectedCity: self.$selectedCity, selectedMarket: self.$selectedMarket, addedMarketList: self.$addedMarketList)
                 MarketSearchView(showModal: self.$showModal, addedMarketList: self.$addedMarketList)
         }
         
@@ -258,7 +271,7 @@ struct SignUpView: View {
         
         guard let url = URL(string: urlString) else { return }
         
-        let body: [String: String] = ["firstname": self.firstName, "lastname": self.lastName, "email": self.email, "pw": self.password, "entityName": self.entityName, "streetAddr": self.streetAddr, "city": self.city, "state": self.state, "zipCode": self.zipCode]
+        let body: [String: String] = ["firstname": self.firstName, "lastname": self.lastName, "email": self.email, "pw": self.password, "entityName": self.entityName, "streetAddr": self.streetAddr, "city": self.businessAddr_city, "state": self.businessAddr_state, "zipCode": self.zipCode]
         
         let finalBody = try! JSONSerialization.data(withJSONObject: body)
         
@@ -273,10 +286,6 @@ struct SignUpView: View {
         }.resume()
     }
 }
-
-
-
-
 
 // For preview usage
 struct SignUpView_Previews: PreviewProvider {

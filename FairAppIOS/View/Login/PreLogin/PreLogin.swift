@@ -31,24 +31,35 @@ struct PreLoginView: View {
                 Group {
                     // Login button
                     NavigationLink(destination: SignInView()){
-                        Text("Sign in")
-                        .fontWeight(.semibold)
-                        .font(.system(size: 14))
-                        .frame(width: 200, height: 50)
-                    }
-                    .background(RoundedRectangle(cornerRadius: 5)
-                        .strokeBorder(Color.black, lineWidth: 1))
-                    .padding()
-                    
-                    // Sign up button
-                    NavigationLink(destination: SignUpView()){
-                        Text("Sign up")
+                        ZStack {
+                            Text("Sign in")
                             .fontWeight(.semibold)
                             .font(.system(size: 14))
                             .frame(width: 200, height: 50)
+                        }
                     }
-                    .background(RoundedRectangle(cornerRadius: 5)
-                        .strokeBorder(Color.black, lineWidth: 1))
+                    //.background(RoundedRectangle(cornerRadius: 25)
+                    //.strokeBorder(Color.black, lineWidth: 1))
+                    .background(Color.green)
+                    .cornerRadius(25)
+                    .padding()
+                    
+                    
+                    
+                    // Sign up button
+                    NavigationLink(destination: SignUpView()){
+                        ZStack {
+                            Text("Sign up")
+                                .fontWeight(.semibold)
+                                .font(.system(size: 14))
+                                .frame(width: 200, height: 50)
+                        }
+
+                    }
+                    //.background(RoundedRectangle(cornerRadius: 25)
+                    //.strokeBorder(Color.black, lineWidth: 1))
+                    .background(Color.green)
+                    .cornerRadius(25)
                     .padding()
                 }
                 

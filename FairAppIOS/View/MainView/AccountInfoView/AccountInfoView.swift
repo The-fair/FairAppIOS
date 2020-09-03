@@ -29,6 +29,7 @@ struct AccountInfoView: View {
     
     
     var body: some View {
+        
         return NavigationView {
             
             VStack(spacing: 30) {
@@ -73,101 +74,6 @@ struct AccountInfoView: View {
                      }
                 .padding()
                 }   // Group
-                
-            
- 
-                   /*
-                   Button(action: { self.shown.toggle() }) {
-                       Text("Add Photo")
-                           .font(.system(size: 14))
-                           .bold()
-
-                   }
-                   .sheet(isPresented: $shown) {
-                       imagePicker(shown: self.$shown,imageURL: self.$imageURL)
-                       }
-                   .padding(10)
-                       .background(Color.green)
-                       .foregroundColor(Color.white)
-                       .cornerRadius(20)
-        
-                   */
-                   
-                   //Private info
-                   
-                   /*
-                   VStack {
-                       // title
-                       Text("Private Info")
-                           .font(.title)
-                           .fontWeight(.semibold)
-                           .foregroundColor(Color.black)
-                           .multilineTextAlignment(.center)
-                       
-                       Group {
-                           
-                           // first name
-                           VStack(spacing: 5) {
-                               Text("First Name:")
-                                   .font(.system(size: 10))
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.black)
-                                    .multilineTextAlignment(.center)
-                               // first name textfield
-                               TextField("First Name", text: $firstName)
-                               .font(.system(size: 14))
-                                   .autocapitalization(.none)
-                               .padding(5)
-                               .background(RoundedRectangle(cornerRadius: 5)
-                                   .strokeBorder(Color.black, lineWidth: 1))
-                           }.padding()
-                           
-                           // last name
-                           VStack(spacing: 5) {
-                               Text("Last Name:")
-                                   .font(.system(size: 10))
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.black)
-                                    .multilineTextAlignment(.center)
-                               // first name textfield
-                               TextField("Last Name", text: $lastName)
-                               .font(.system(size: 14))
-                                   .autocapitalization(.none)
-                               .padding(5)
-                               .background(RoundedRectangle(cornerRadius: 5)
-                                   .strokeBorder(Color.black, lineWidth: 1))
-                           }.padding()
-                           
-                           // email
-                           VStack(spacing: 5) {
-                               Text("Email:")
-                                   .font(.system(size: 10))
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.black)
-                                    .multilineTextAlignment(.center)
-                               // first name textfield
-                               TextField("Email", text: $emailAddr)
-                               .font(.system(size: 14))
-                                   .autocapitalization(.none)
-                               .padding(5)
-                               .background(RoundedRectangle(cornerRadius: 5)
-                                   .strokeBorder(Color.black, lineWidth: 1))
-                           }.padding()
-                           
-                           
-                           List(results, id: \.email) { item in
-                               VStack(alignment: .leading) {
-                                   Text(item.firstname)
-                                       .font(.headline)
-                                   Text(item.lastname)
-                               }
-                           }
-                           
-
-                       }
-                   }   //VStack
-                   */
-                   
                 
             }
        

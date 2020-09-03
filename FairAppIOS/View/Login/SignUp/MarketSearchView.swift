@@ -21,10 +21,13 @@ struct MarketSearchView: View {
     //@State var selectedCity: String
     //@State var selectedMarket: String
     //@State var addedMarketList: [String]
+    
     @Binding var showModal: Bool
+    
     //@Binding var selectedState: String
     //@Binding var selectedCity: String
     //@Binding var selectedMarket: String
+    
     @Binding var addedMarketList: [String]
 
     var count = 0
@@ -32,7 +35,9 @@ struct MarketSearchView: View {
     var body: some View {
         VStack{
             StateDropDownMenu()
+            
             //Text("hello")
+            
             Button("Add Market") {
                 self.addedMarketList.append("market \(Date())")
                 self.showModal.toggle()
