@@ -28,9 +28,7 @@ struct HomeView: View {
                 // first row stack
                 HStack(spacing: 80) {
                     NavigationLink(destination: ScheduleView()) {
-                        //.environmentObject(schedule_setting)) {
-                    // schedule section button
-                    //Button(action: self.navigateToScheduleView) {
+
                         VStack {
                             Image(systemName: ModuleIconPair["Schedule"]!)
                             Text("Schedule")
@@ -83,7 +81,6 @@ struct HomeView: View {
                     
                     // Content section button
                     NavigationLink(destination: ContentView()) {
-                    //Button(action: self.navigateToContentView) {
                         VStack {
                             Image(systemName: ModuleIconPair["Content"]!)
                             Text("Content")
@@ -103,7 +100,6 @@ struct HomeView: View {
                 HStack(spacing: 80) {
                     
                     NavigationLink(destination: OrderView()) {
-                    //Button(action: self.navigateToOrderView) {
                         VStack {
                             Image(systemName: ModuleIconPair["Order"]!)
                             Text("Order")
@@ -118,7 +114,6 @@ struct HomeView: View {
                     .frame(width: 100, height: 100, alignment: .center))
                     
                     NavigationLink(destination: MessageView()) {
-                    //Button(action: self.navigateToMessageView) {
                         VStack {
                             Image(systemName: ModuleIconPair["Message"]!)
                             Text("Message")
