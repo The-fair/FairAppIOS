@@ -18,26 +18,34 @@ struct HomeView: View {
                           "Order":"calendar",
                           "Message":"calendar"]
     
+    
+    // binding environment object
+    //let schedule_setting = Schedule_Setting()
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 40) {
                 // first row stack
                 HStack(spacing: 80) {
                     NavigationLink(destination: ScheduleView()) {
-                    // schedule section button
-                    //Button(action: self.navigateToScheduleView) {
+
                         VStack {
                             Image(systemName: ModuleIconPair["Schedule"]!)
                             Text("Schedule")
                                 .foregroundColor(Color.green)
                             .frame(width: 80, height: 20, alignment: .center)
                         }
+                    
                     }
                     .font(.system(size: 14))
                     .padding(5)
                     .background(RoundedRectangle(cornerRadius: 10)
                     .strokeBorder(Color.black, lineWidth: 1)
                     .frame(width: 100, height: 100, alignment: .center))
+//                    .background(NavigationConfigurator { nc in
+//                        nc.navigationBar.barTintColor = .blue
+//                        nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.green]
+//                    })
                     
                     // product section button
                     NavigationLink(destination: ProductView()) {
@@ -78,7 +86,6 @@ struct HomeView: View {
                     
                     // Content section button
                     NavigationLink(destination: ContentView()) {
-                    //Button(action: self.navigateToContentView) {
                         VStack {
                             Image(systemName: ModuleIconPair["Content"]!)
                             Text("Content")
@@ -98,7 +105,6 @@ struct HomeView: View {
                 HStack(spacing: 80) {
                     
                     NavigationLink(destination: OrderView()) {
-                    //Button(action: self.navigateToOrderView) {
                         VStack {
                             Image(systemName: ModuleIconPair["Order"]!)
                             Text("Order")
@@ -113,7 +119,6 @@ struct HomeView: View {
                     .frame(width: 100, height: 100, alignment: .center))
                     
                     NavigationLink(destination: MessageView()) {
-                    //Button(action: self.navigateToMessageView) {
                         VStack {
                             Image(systemName: ModuleIconPair["Message"]!)
                             Text("Message")
@@ -127,11 +132,30 @@ struct HomeView: View {
                     .strokeBorder(Color.black, lineWidth: 1)
                     .frame(width: 100, height: 100, alignment: .center))
                 }.padding()
+//                .background(NavigationConfigurator { nc in
+//                    nc.navigationBar.barTintColor = .blue
+//                    nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.green]
+//                })
             } // main VStack
             .padding()
-        }
+                //.navigationBarTitle("back", displayMode: .inline)
+            .background(NavigationConfigurator { nc in
+                nc.navigationBar.barTintColor = UIColor(red: 0.043, green: 0.4118, blue: 0.0588, alpha: 0.9)
+                nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white, .font : UIFont(name: "Georgia-Bold", size: 20)!]
+                //nc.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+            })
+
+        }   // NavigationView
+        .accentColor( .white)
+        .navigationViewStyle(StackNavigationViewStyle())
+        
+    //.navigationViewStyle(StackNavigationViewStyle())
 
     }
+    
+    
+
     
     // **************************************************
     // function to navigate to schedule view

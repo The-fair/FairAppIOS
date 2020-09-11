@@ -226,6 +226,7 @@ struct SignUpView: View {
                             }
                     }
                 } // scrollable view
+                        .navigationBarTitle("Fill Your Information", displayMode: .inline)
 
             .padding(.horizontal, 20)
             .padding(.vertical, 20)}

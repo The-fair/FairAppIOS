@@ -38,12 +38,12 @@
 		6418731A249EA59000D7BE77 /* ProductViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64187319249EA59000D7BE77 /* ProductViewConstants.swift */; };
 		641BAF7A248568B700E220F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641BAF79248568B700E220F1 /* AppDelegate.swift */; };
 		641BAF7C248568B700E220F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641BAF7B248568B700E220F1 /* SceneDelegate.swift */; };
-		641BAF7F248568B700E220F1 /* FairAppIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 641BAF7D248568B700E220F1 /* FairAppIOS.xcdatamodeld */; };
 		641BAF81248568B700E220F1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641BAF80248568B700E220F1 /* MainView.swift */; };
 		641BAF83248568BA00E220F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641BAF82248568BA00E220F1 /* Assets.xcassets */; };
 		641BAF86248568BA00E220F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641BAF85248568BA00E220F1 /* Preview Assets.xcassets */; };
 		641BAF89248568BA00E220F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 641BAF87248568BA00E220F1 /* LaunchScreen.storyboard */; };
 		6426E24224856DE90033C704 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6426E24124856DE90033C704 /* GoogleService-Info.plist */; };
+		645AAA3F250B18780043972E /* StoreActivityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645AAA3E250B18780043972E /* StoreActivityDetailView.swift */; };
 		648760812485D26500B12022 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648760802485D26500B12022 /* SignUpView.swift */; };
 		648760832485D9A100B12022 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648760822485D9A100B12022 /* SignInView.swift */; };
 		648760862485DF2200B12022 /* VendorProfileConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648760852485DF2200B12022 /* VendorProfileConstants.swift */; };
@@ -53,6 +53,15 @@
 		64B0D7872485A46700E3FAFA /* AuthSessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0D7862485A46700E3FAFA /* AuthSessionStore.swift */; };
 		64B0D7892485C05C00E3FAFA /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0D7882485C05C00E3FAFA /* AuthView.swift */; };
 		64B0D78D2485CC2B00E3FAFA /* LabelledDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0D78C2485CC2B00E3FAFA /* LabelledDivider.swift */; };
+		64DDA02025082029004EB64E /* RatingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDA01F25082029004EB64E /* RatingStar.swift */; };
+		64DDA0222508204B004EB64E /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDA0212508204B004EB64E /* ActivityIndicator.swift */; };
+		64DDA024250948C3004EB64E /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDA023250948C3004EB64E /* ReviewView.swift */; };
+		64DDA0272509494F004EB64E /* StoreHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDA0262509494F004EB64E /* StoreHeaderView.swift */; };
+		64DDA02D25094C03004EB64E /* StoreScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDA02C25094C03004EB64E /* StoreScheduleView.swift */; };
+		64DDA02F25094C37004EB64E /* StoreOfferringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDA02E25094C37004EB64E /* StoreOfferringView.swift */; };
+		64DDA03125094C5B004EB64E /* StoreActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDA03025094C5B004EB64E /* StoreActivityView.swift */; };
+		64DDA03325094F76004EB64E /* StoreRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDA03225094F76004EB64E /* StoreRecommendView.swift */; };
+		64DDA0372509C58C004EB64E /* DemoData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64DDA0352509C58C004EB64E /* DemoData.xcdatamodeld */; };
 		64E45F2525012D9100288B1F /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E45F2425012D9100288B1F /* BottomSheetView.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,13 +97,13 @@
 		641BAF76248568B700E220F1 /* FairAppIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FairAppIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		641BAF79248568B700E220F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		641BAF7B248568B700E220F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		641BAF7E248568B700E220F1 /* FairAppIOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FairAppIOS.xcdatamodel; sourceTree = "<group>"; };
 		641BAF80248568B700E220F1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		641BAF82248568BA00E220F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		641BAF85248568BA00E220F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		641BAF88248568BA00E220F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		641BAF8A248568BA00E220F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6426E24124856DE90033C704 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		645AAA3E250B18780043972E /* StoreActivityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreActivityDetailView.swift; sourceTree = "<group>"; };
 		648760802485D26500B12022 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		648760822485D9A100B12022 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		648760852485DF2200B12022 /* VendorProfileConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorProfileConstants.swift; sourceTree = "<group>"; };
@@ -104,6 +113,15 @@
 		64B0D7862485A46700E3FAFA /* AuthSessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSessionStore.swift; sourceTree = "<group>"; };
 		64B0D7882485C05C00E3FAFA /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		64B0D78C2485CC2B00E3FAFA /* LabelledDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledDivider.swift; sourceTree = "<group>"; };
+		64DDA01F25082029004EB64E /* RatingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStar.swift; sourceTree = "<group>"; };
+		64DDA0212508204B004EB64E /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		64DDA023250948C3004EB64E /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		64DDA0262509494F004EB64E /* StoreHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHeaderView.swift; sourceTree = "<group>"; };
+		64DDA02C25094C03004EB64E /* StoreScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreScheduleView.swift; sourceTree = "<group>"; };
+		64DDA02E25094C37004EB64E /* StoreOfferringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreOfferringView.swift; sourceTree = "<group>"; };
+		64DDA03025094C5B004EB64E /* StoreActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreActivityView.swift; sourceTree = "<group>"; };
+		64DDA03225094F76004EB64E /* StoreRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRecommendView.swift; sourceTree = "<group>"; };
+		64DDA0362509C58C004EB64E /* Demo_Schedule.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Demo_Schedule.xcdatamodel; sourceTree = "<group>"; };
 		64E45F2425012D9100288B1F /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		AFC86365BC570E99FA324994 /* Pods-FairAppIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FairAppIOS.debug.xcconfig"; path = "Target Support Files/Pods-FairAppIOS/Pods-FairAppIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C1F363346B189EA5809F2B98 /* Pods_FairAppIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FairAppIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +177,11 @@
 		640C706A24884938004CCF62 /* StoreView */ = {
 			isa = PBXGroup;
 			children = (
+				64DDA02B25094AA6004EB64E /* StoreRecommend */,
+				64DDA02A25094994004EB64E /* StoreActivity */,
+				64DDA02925094987004EB64E /* StoreOfferring */,
+				64DDA02825094969004EB64E /* StoreSchedule */,
+				64DDA02525094933004EB64E /* Header */,
 				640C706E24884A14004CCF62 /* StoreView.swift */,
 			);
 			path = StoreView;
@@ -406,11 +429,11 @@
 				641BAF922485696D00E220F1 /* View */,
 				641BAF912485696700E220F1 /* Model */,
 				641BAF902485695E00E220F1 /* App */,
+				64DDA038250AD925004EB64E /* CoreData */,
 				641BAF82248568BA00E220F1 /* Assets.xcassets */,
 				6426E24124856DE90033C704 /* GoogleService-Info.plist */,
 				641BAF87248568BA00E220F1 /* LaunchScreen.storyboard */,
 				641BAF8A248568BA00E220F1 /* Info.plist */,
-				641BAF7D248568B700E220F1 /* FairAppIOS.xcdatamodeld */,
 				641BAF84248568BA00E220F1 /* Preview Content */,
 			);
 			path = FairAppIOS;
@@ -495,8 +518,60 @@
 			children = (
 				64B0D78C2485CC2B00E3FAFA /* LabelledDivider.swift */,
 				64E45F2425012D9100288B1F /* BottomSheetView.swift */,
+				64DDA01F25082029004EB64E /* RatingStar.swift */,
+				64DDA0212508204B004EB64E /* ActivityIndicator.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		64DDA02525094933004EB64E /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				64DDA023250948C3004EB64E /* ReviewView.swift */,
+				64DDA0262509494F004EB64E /* StoreHeaderView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		64DDA02825094969004EB64E /* StoreSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				64DDA02C25094C03004EB64E /* StoreScheduleView.swift */,
+			);
+			path = StoreSchedule;
+			sourceTree = "<group>";
+		};
+		64DDA02925094987004EB64E /* StoreOfferring */ = {
+			isa = PBXGroup;
+			children = (
+				64DDA02E25094C37004EB64E /* StoreOfferringView.swift */,
+			);
+			path = StoreOfferring;
+			sourceTree = "<group>";
+		};
+		64DDA02A25094994004EB64E /* StoreActivity */ = {
+			isa = PBXGroup;
+			children = (
+				64DDA03025094C5B004EB64E /* StoreActivityView.swift */,
+				645AAA3E250B18780043972E /* StoreActivityDetailView.swift */,
+			);
+			path = StoreActivity;
+			sourceTree = "<group>";
+		};
+		64DDA02B25094AA6004EB64E /* StoreRecommend */ = {
+			isa = PBXGroup;
+			children = (
+				64DDA03225094F76004EB64E /* StoreRecommendView.swift */,
+			);
+			path = StoreRecommend;
+			sourceTree = "<group>";
+		};
+		64DDA038250AD925004EB64E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				64DDA0352509C58C004EB64E /* DemoData.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		7930F87AD3E075CD88646FD5 /* Frameworks */ = {
@@ -632,20 +707,25 @@
 				6487608E2486A93000B12022 /* SignUpMarketSelectionManager.swift in Sources */,
 				640C7088249147D1004CCF62 /* FirebaseStorageModel.swift in Sources */,
 				6418731124994D2100D7BE77 /* AccountHelpFAQView.swift in Sources */,
+				64DDA0272509494F004EB64E /* StoreHeaderView.swift in Sources */,
 				6487608824860BE600B12022 /* MarketSearchView.swift in Sources */,
+				64DDA024250948C3004EB64E /* ReviewView.swift in Sources */,
 				640C708C24916A51004CCF62 /* FirebaseImageView.swift in Sources */,
 				64E45F2525012D9100288B1F /* BottomSheetView.swift in Sources */,
+				64DDA02D25094C03004EB64E /* StoreScheduleView.swift in Sources */,
 				640C7083248DB250004CCF62 /* MessageView.swift in Sources */,
 				640773B024BB9E1600466515 /* ScheduleWeekday.swift in Sources */,
 				64187316249E71E700D7BE77 /* ProductEditView.swift in Sources */,
+				645AAA3F250B18780043972E /* StoreActivityDetailView.swift in Sources */,
 				641872FA249936A500D7BE77 /* ProductDetailView.swift in Sources */,
+				64DDA0222508204B004EB64E /* ActivityIndicator.swift in Sources */,
 				640C707F248DB23A004CCF62 /* ContentView.swift in Sources */,
 				64B0D7892485C05C00E3FAFA /* AuthView.swift in Sources */,
 				6418731324994D6F00D7BE77 /* AccountNotificationView.swift in Sources */,
 				640C7079248DB215004CCF62 /* ScheduleView.swift in Sources */,
 				641872F72495023A00D7BE77 /* PreLogin.swift in Sources */,
 				6418730F24994D0D00D7BE77 /* AccountSecurityView.swift in Sources */,
-				641BAF7F248568B700E220F1 /* FairAppIOS.xcdatamodeld in Sources */,
+				64DDA0372509C58C004EB64E /* DemoData.xcdatamodeld in Sources */,
 				640C707124884A22004CCF62 /* AccountInfoView.swift in Sources */,
 				640C707B248DB221004CCF62 /* ProductListView.swift in Sources */,
 				6418730324993E6000D7BE77 /* ProductListElementDetail.swift in Sources */,
@@ -653,16 +733,20 @@
 				648760812485D26500B12022 /* SignUpView.swift in Sources */,
 				648760862485DF2200B12022 /* VendorProfileConstants.swift in Sources */,
 				641BAF81248568B700E220F1 /* MainView.swift in Sources */,
+				64DDA02025082029004EB64E /* RatingStar.swift in Sources */,
 				6418730D24994CF600D7BE77 /* BusinessInfoView.swift in Sources */,
+				64DDA03125094C5B004EB64E /* StoreActivityView.swift in Sources */,
 				640C707D248DB22E004CCF62 /* DealView.swift in Sources */,
 				6418731A249EA59000D7BE77 /* ProductViewConstants.swift in Sources */,
 				641BAF7C248568B700E220F1 /* SceneDelegate.swift in Sources */,
 				6487608A24867B8C00B12022 /* TestContextMenu.swift in Sources */,
 				640C7081248DB244004CCF62 /* OrderView.swift in Sources */,
 				64187318249E720300D7BE77 /* ProductCreateView.swift in Sources */,
+				64DDA03325094F76004EB64E /* StoreRecommendView.swift in Sources */,
 				640C706F24884A14004CCF62 /* StoreView.swift in Sources */,
 				640C709324917D9F004CCF62 /* VendorProfileHttpRequest.swift in Sources */,
 				64B0D78D2485CC2B00E3FAFA /* LabelledDivider.swift in Sources */,
+				64DDA02F25094C37004EB64E /* StoreOfferringView.swift in Sources */,
 				6418730B24994C9000D7BE77 /* AccountProfileView.swift in Sources */,
 				641872FE2499382200D7BE77 /* ProductListElement.swift in Sources */,
 			);
@@ -862,13 +946,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		641BAF7D248568B700E220F1 /* FairAppIOS.xcdatamodeld */ = {
+		64DDA0352509C58C004EB64E /* DemoData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				641BAF7E248568B700E220F1 /* FairAppIOS.xcdatamodel */,
+				64DDA0362509C58C004EB64E /* Demo_Schedule.xcdatamodel */,
 			);
-			currentVersion = 641BAF7E248568B700E220F1 /* FairAppIOS.xcdatamodel */;
-			path = FairAppIOS.xcdatamodeld;
+			currentVersion = 64DDA0362509C58C004EB64E /* Demo_Schedule.xcdatamodel */;
+			path = DemoData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
