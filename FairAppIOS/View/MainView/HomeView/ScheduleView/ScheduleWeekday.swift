@@ -15,5 +15,4 @@ struct ScheduleWeekday: Identifiable {
     var startTime: Date
     var endTime: Date
     var location: String
-    
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ActivityEntity" representedClassName="ActivityEntity" syncable="YES" codeGenerationType="class"/>
+    <entity name="ProductEntity" representedClassName="ProductEntity" syncable="YES" codeGenerationType="class"/>
+    <entity name="ReviewEntity" representedClassName="ReviewEntity" syncable="YES" codeGenerationType="class"/>
+    <entity name="Schedule_Current_Entity" representedClassName="Schedule_Current_Entity" syncable="YES" codeGenerationType="class">
+        <attribute name="endDate" optional="YES" attributeType="String" defaultValueString="9/10/20, 7:58 PM"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="startDate" optional="YES" attributeType="String" defaultValueString="9/10/20, 7:57 PM"/>
+        <attribute name="weekday" optional="YES" attributeType="String" defaultValueString="Monday"/>
+    </entity>
+    <entity name="Schedule_Entity" representedClassName="Schedule_Entity" syncable="YES" codeGenerationType="class">
+        <attribute name="endDate" optional="YES" attributeType="Date" defaultDateTimeInterval="621439320" usesScalarValueType="NO"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" defaultDateTimeInterval="621439320" usesScalarValueType="NO"/>
+        <attribute name="weekday" optional="YES" attributeType="String" defaultValueString="Monday"/>
+    </entity>
+    <entity name="Schedule_Next_Entity" representedClassName="Schedule_Next_Entity" syncable="YES" codeGenerationType="class">
+        <attribute name="fridayEnd" optional="YES" attributeType="Date" defaultDateTimeInterval="621473040" usesScalarValueType="NO"/>
+        <attribute name="fridayStart" optional="YES" attributeType="Date" defaultDateTimeInterval="621473040" usesScalarValueType="NO"/>
+        <attribute name="mondayEnd" optional="YES" attributeType="Date" defaultDateTimeInterval="621473040" usesScalarValueType="NO"/>
+        <attribute name="mondayStart" optional="YES" attributeType="Date" defaultDateTimeInterval="621473040" usesScalarValueType="NO"/>
+        <attribute name="saturdayEnd" optional="YES" attributeType="Date" defaultDateTimeInterval="621473040" usesScalarValueType="NO"/>
+        <attribute name="saturdayStart" optional="YES" attributeType="Date" defaultDateTimeInterval="621473040" usesScalarValueType="NO"/>
+        <attribute name="sundayEnd" optional="YES" attributeType="Date" defaultDateTimeInterval="621473040" usesScalarValueType="NO"/>
+        <attribute name="sundayStart" optional="YES" attributeType="Date" defaultDateTimeInterval="621473040" usesScalarValueType="NO"/>
+        <attribute name="thursdayEnd" optional="YES" attributeType="Date" defaultDateTimeInterval="621473040" usesScalarValueType="NO"/>
+        <attribute name="thursdayStart" optional="YES" attributeType="Date" defaultDateTimeInterval="621473040" usesScalarValueType="NO"/>
+        <attribute name="tuesdayEnd" optional="YES" attributeType="Date" defaultDateTimeInterval="621473040" usesScalarValueType="NO"/>
+        <attribute name="tuesdayStart" optional="YES" attributeType="Date" defaultDateTimeInterval="621473040" usesScalarValueType="NO"/>
+        <attribute name="wednesdayEnd" optional="YES" attributeType="Date" defaultDateTimeInterval="621473040" usesScalarValueType="NO"/>
+        <attribute name="wednesdayStart" optional="YES" attributeType="Date" defaultDateTimeInterval="621473040" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Schedule_Template_Entity" representedClassName="Schedule_Template_Entity" syncable="YES" codeGenerationType="class"/>
+    <entity name="VendorInfoEntity" representedClassName="VendorInfoEntity" syncable="YES" codeGenerationType="class"/>
+    <elements>
+        <element name="ActivityEntity" positionX="143.0859375" positionY="108.35546875" width="128" height="43"/>
+        <element name="ProductEntity" positionX="185.34375" positionY="149.640625" width="128" height="43"/>
+        <element name="ReviewEntity" positionX="94.64453125" positionY="204.64453125" width="128" height="43"/>
+        <element name="Schedule_Current_Entity" positionX="-320.20703125" positionY="165.140625" width="128" height="103"/>
+        <element name="Schedule_Entity" positionX="-186.7109375" positionY="363.16015625" width="128" height="88"/>
+        <element name="Schedule_Next_Entity" positionX="-68.22265625" positionY="151.70703125" width="128" height="253"/>
+        <element name="Schedule_Template_Entity" positionX="-199.4765625" positionY="76.84765625" width="128" height="43"/>
+        <element name="VendorInfoEntity" positionX="96.22265625" positionY="258.8359375" width="128" height="43"/>
+    </elements>
+</model>

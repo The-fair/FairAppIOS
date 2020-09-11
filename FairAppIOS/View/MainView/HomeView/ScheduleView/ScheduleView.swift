@@ -159,6 +159,7 @@ struct ScheduleView: View {
 
             }.edgesIgnoringSafeArea(.all)
         }
+            .navigationBarTitle(Text("Schedule").font(.subheadline), displayMode: .inline)
     .padding(2)
     }
     
@@ -183,133 +184,17 @@ struct Schedule_Row: View {
             Toggle(isOn: $schedule.switchState) {
                 Text("Enable")
 
-        }
+            }
+            
+            HStack {
+                Text("Location: ")
+                TextField("location", text: self.$schedule.location)
+            }
     }
     }
-    
-//    var body: some View {
-//        VStack {
-//            HStack(alignment:.center) {
-////                GeometryReader { geometrsy in
-////
-////                }
-//                VStack {
-//                    //Text(schedule.day)
-//                    //Spacer()
-//
-//                    //Form() {
-//                        DatePicker("Openning", selection: self.$schedule.startTime, displayedComponents: .hourAndMinute)
-//                        //Spacer()
-//                        DatePicker("Closing", selection: self.$schedule.endTime, displayedComponents: .hourAndMinute)
-//
-//                        Toggle(isOn: $schedule.switchState) {
-//                            Text("Enable")
-//                        }
-//                        //.labelsHidden()
-//                    //}
-//
-//
-////                    HStack(alignment:.center) {
-////                        HStack {
-////                            Button(action: {
-////                                self.showDatePicker.toggle()
-////                                self.schedule_setting.targetDay = self.schedule.day
-////                                //print(self.schedule_setting.targetDay)
-////                            })
-////                            {
-////                                Text(schedule.startTimeStr)
-////                            }
-////                            .buttonStyle(BorderlessButtonStyle())
-////                        }
-////
-////                        Text(" to ")
-////
-////                        HStack {
-////                            Button(action: {
-////                                self.showDatePicker.toggle()
-////                                self.schedule_setting.targetDay = self.schedule.day
-////                                print(self.schedule_setting.targetDay)
-////                            })
-////                            {
-////                                Text(schedule.endTimeStr)
-////                            }
-////                            .buttonStyle(BorderlessButtonStyle())
-////                        }
-////
-////
-////                    }   // HStack
-////                    .frame(height: nil)
-////                        .frame(width: nil)   // HStack
-////                        //.frame(maxWidth: .infinity)
-//                }   // VStack
-//                    .frame(minHeight: self.showDatePicker ? 150 : 300)
-//                                        //.frame(width: nil)   // HStack
-//                                        .frame(maxHeight: .infinity)
-//
-////                Spacer()
-//
-////                Toggle(isOn: $schedule.switchState) {
-////                    Text("Switch")
-////                }
-////                .labelsHidden()
-//
-//            }   // HStack
-//            //.frame(height: nil)
-//            .frame(width: nil)   // HStack
-//            .frame(maxWidth: .infinity)
-//
-//
-//
-//
-//
-//        }   // VStack
-//        //.padding(0)
-//            .frame(maxHeight: .infinity)
-//
-//    }
 }
 
-struct Schedule_DatePickerView: View {
-    @Binding var date : Date
-        {
-        willSet {
-            //schedule_setting.pickedDate = date
-            //print(date)
-        }
-    }
-    
-    
-    
-//    @State var date : Date {
-//        willSet{
-//            print(date)
-//        }
-//    }
-    //@EnvironmentObject var schedule_setting: Schedule_Setting
-    
-    var body: some View {
-        VStack {
-            ZStack {
-                Button(action: {
-                    print("hi")
-                    //self.switchState = false
-                    //self.schedule_setting.pickedDate = self.date
-                    //self.schedule_setting.targetDay = self.
-                    //print(self.schedule_setting.pickedDate)
-                    //print(self.schedule_setting.targetDay)
-                }) {
-                    Text("Done")
-                }
-                .offset(x: 120, y: -80)
-                .buttonStyle(BorderlessButtonStyle())
-                
-                DatePicker("", selection:  $date, displayedComponents:  .hourAndMinute)
-                    .labelsHidden()
-            }
-        }
-    }
-    
-}
+
 
 class Schedule_Setting: ObservableObject {
     //init() {}
@@ -324,35 +209,7 @@ class Schedule_Setting: ObservableObject {
     @Published var targetDay: String = ""
     @Published var isStartTime: Bool = true
     
-//    @Published var schedule_list_template = [
-//        Schedule_Element(day: "Monday", switchState: true),
-//        Schedule_Element(day: "Tuesday", switchState: true),
-//        Schedule_Element(day: "Wednesday", switchState: true),
-//        Schedule_Element(day: "Thursday", switchState: true),
-//        Schedule_Element(day: "Friday", switchState: true),
-//        Schedule_Element(day: "Saturday", switchState: true),
-//        Schedule_Element(day: "Sunday", switchState: true)
-//    ]
-//
-//    @Published var schedule_list_current = [
-//        Schedule_Element(day: "Monday", switchState: true),
-//        Schedule_Element(day: "Tuesday", switchState: true),
-//        Schedule_Element(day: "Wednesday", switchState: true),
-//        Schedule_Element(day: "Thursday", switchState: true),
-//        Schedule_Element(day: "Friday", switchState: true),
-//        Schedule_Element(day: "Saturday", switchState: true),
-//        Schedule_Element(day: "Sunday", switchState: true)
-//    ]
-//
-//    @Published var schedule_list_template = [
-//        Schedule_Element(day: "Monday", switchState: true),
-//        Schedule_Element(day: "Tuesday", switchState: true),
-//        Schedule_Element(day: "Wednesday", switchState: true),
-//        Schedule_Element(day: "Thursday", switchState: true),
-//        Schedule_Element(day: "Friday", switchState: true),
-//        Schedule_Element(day: "Saturday", switchState: true),
-//        Schedule_Element(day: "Sunday", switchState: true)
-//    ]
+
 }
 
 
@@ -387,14 +244,17 @@ class Schedule_Element : ObservableObject, Identifiable, Equatable{
             self.endTimeStr = formatter.string(from: endTime)
         }
     }
+    
+    @Published var location: String = ""
 
     var endTimeStr: String = ""
 
-    init(day: String, switchState: Bool) {
+    init(day: String, switchState: Bool, location: String) {
         self.day = day
         self.switchState = switchState
         self.startTime = Date()
         self.endTime = Date()
+        self.location = location
 
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
@@ -408,13 +268,13 @@ class Schedule_Element : ObservableObject, Identifiable, Equatable{
 
 class Schedule_List: ObservableObject {
     @Published var schedules = [
-        Schedule_Element(day: "Monday", switchState: true),
-        Schedule_Element(day: "Tuesday", switchState: true),
-        Schedule_Element(day: "Wednesday", switchState: true),
-        Schedule_Element(day: "Thursday", switchState: true),
-        Schedule_Element(day: "Friday", switchState: true),
-        Schedule_Element(day: "Saturday", switchState: true),
-        Schedule_Element(day: "Sunday", switchState: true)
+        Schedule_Element(day: "Monday", switchState: true, location: "CNY Regional Market Stall 01"),
+        Schedule_Element(day: "Tuesday", switchState: true, location: "CNY Regional Market Stall 02"),
+        Schedule_Element(day: "Wednesday", switchState: true, location: "CNY Regional Market Stall 03"),
+        Schedule_Element(day: "Thursday", switchState: true, location: "CNY Regional Market Stall 04"),
+        Schedule_Element(day: "Friday", switchState: true, location: "CNY Regional Market Stall 05"),
+        Schedule_Element(day: "Saturday", switchState: true, location: "CNY Regional Market Stall 06"),
+        Schedule_Element(day: "Sunday", switchState: true, location: "CNY Regional Market Stall 07")
     ]
 
 }

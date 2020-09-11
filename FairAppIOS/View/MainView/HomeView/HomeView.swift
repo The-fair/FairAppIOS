@@ -35,12 +35,17 @@ struct HomeView: View {
                                 .foregroundColor(Color.green)
                             .frame(width: 80, height: 20, alignment: .center)
                         }
+                    
                     }
                     .font(.system(size: 14))
                     .padding(5)
                     .background(RoundedRectangle(cornerRadius: 10)
                     .strokeBorder(Color.black, lineWidth: 1)
                     .frame(width: 100, height: 100, alignment: .center))
+//                    .background(NavigationConfigurator { nc in
+//                        nc.navigationBar.barTintColor = .blue
+//                        nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.green]
+//                    })
                     
                     // product section button
                     NavigationLink(destination: ProductView()) {
@@ -127,11 +132,30 @@ struct HomeView: View {
                     .strokeBorder(Color.black, lineWidth: 1)
                     .frame(width: 100, height: 100, alignment: .center))
                 }.padding()
+//                .background(NavigationConfigurator { nc in
+//                    nc.navigationBar.barTintColor = .blue
+//                    nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.green]
+//                })
             } // main VStack
             .padding()
-        }
+                //.navigationBarTitle("back", displayMode: .inline)
+            .background(NavigationConfigurator { nc in
+                nc.navigationBar.barTintColor = UIColor(red: 0.043, green: 0.4118, blue: 0.0588, alpha: 0.9)
+                nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white, .font : UIFont(name: "Georgia-Bold", size: 20)!]
+                //nc.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+            })
+
+        }   // NavigationView
+        .accentColor( .white)
+        .navigationViewStyle(StackNavigationViewStyle())
+        
+    //.navigationViewStyle(StackNavigationViewStyle())
 
     }
+    
+    
+
     
     // **************************************************
     // function to navigate to schedule view

@@ -14,7 +14,7 @@ struct StoreRecommendView: View {
     
     var body: some View {
         Section {
-           Text("Store Activity View")
+           Text("Store Recommend View")
         }
         
     }

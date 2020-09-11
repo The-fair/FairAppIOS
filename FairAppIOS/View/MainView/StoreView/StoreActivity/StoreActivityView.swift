@@ -13,9 +13,8 @@ struct StoreActivityView: View {
     
     
     var body: some View {
-        Section {
+        Section(header: Text("Activity")) {
              Text("Store Activity View")
         }
-       
     }
 }

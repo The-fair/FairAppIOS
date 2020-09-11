@@ -64,8 +64,17 @@ struct PreLoginView: View {
                 }
                 
             }
-        }
-    }
+        .background(NavigationConfigurator { nc in
+            nc.navigationBar.barTintColor = UIColor(red: 0.043, green: 0.4118, blue: 0.0588, alpha: 0.9)
+            nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white, .font : UIFont(name: "Georgia-Bold", size: 20)!]
+            //nc.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+        })
+        }   // nav
+            .accentColor( .white)
+            .navigationViewStyle(StackNavigationViewStyle())
+        
+    } // body
 }
 
 

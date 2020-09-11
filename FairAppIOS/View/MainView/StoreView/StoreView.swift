@@ -48,21 +48,25 @@ struct StoreBaseView: View {
     @State var isNavBarHidden: Bool = true
     
     var body: some View {
-        NavigationView {
-            Form {
-                StoreHeaderView(isNavBarHidden: self.$isNavBarHidden, rating: self.contentElement.rating, title: self.contentElement.title, description: self.contentElement.descriptoon)
-                StoreScheduleView()
-                StoreActivityView()
-                StoreOfferringView()
-                StoreRecommendView()
-                
-            }
-            .navigationBarTitle("Store")
-            .navigationBarHidden(self.isNavBarHidden)
-            .onAppear {
-                    self.isNavBarHidden = true
-            }
+        VStack {
+                    Text("Content Here")
         }
+
+//        NavigationView {
+//            Form {
+//                StoreHeaderView(isNavBarHidden: self.$isNavBarHidden, rating: self.contentElement.rating, title: self.contentElement.title, description: self.contentElement.descriptoon)
+//                StoreScheduleView()
+//                StoreActivityView()
+//                StoreOfferringView()
+//                StoreRecommendView()
+//
+//            }
+//            .navigationBarTitle("Store")
+//            .navigationBarHidden(self.isNavBarHidden)
+//            .onAppear {
+//                self.isNavBarHidden = true
+//            }
+//        }
     //.labelsHidden()
 
 

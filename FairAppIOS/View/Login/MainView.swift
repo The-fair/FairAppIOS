@@ -14,11 +14,56 @@ struct MainView: View {
     
     @EnvironmentObject var session: AuthSessionStore
     
+    //@Environment(\.managedObjectContext) var moc
+    
+    //@FetchRequest(entity: Schedule_Current_Entity.entity(), sortDescriptors: []) var schedules: FetchedResults<Schedule_Current_Entity>
+    
+    
+    
     // **************************************************
     //  the function to get session user status
     // **************************************************
     func getUser() {
-        session.listen()
+        generatePremadeData {
+            //print("test sequence")
+            self.session.listen()
+        }
+        //session.listen()
+    }
+    
+    func generatePremadeData(cbfunc: @escaping() -> Void) {
+        //print("Generating Premade Data")
+        cbfunc()
+    }
+    
+    func generateScheduleData(cbfunc: @escaping() -> Void) {
+        
+        let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        let startTime = Date()
+        let endTime = Date()
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+
+        let startTimeStr = formatter.string(from: startTime)
+        let endTimeStr = formatter.string(from: endTime)
+        
+        //var startTimes: [String] = []
+        //var endTimes: [String] = []
+        
+//        for index in 0...6 {
+//            //startTimes.append(startTimeStr)
+//            //endTimes.append(endTimeStr)
+//            let schedule = Schedule_Current_Entity(context: self.moc)
+//            schedule.id = UUID()
+//            schedule.weekday = weekdays[index]
+//            schedule.startDate = startTimeStr
+//            schedule.endDate = endTimeStr
+//        }
+        
+        
+        
+        cbfunc()
     }
     
     var body: some View {

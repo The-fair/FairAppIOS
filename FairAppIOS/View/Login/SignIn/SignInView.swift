@@ -127,7 +127,7 @@ struct SignInView: View {
                         .frame(height: 50)
                         .foregroundColor(.white)
                         .font(.system(size: 12, weight: .bold))
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.yellow, Color.green]), startPoint: .leading, endPoint: .trailing))
+                        //.background(LinearGradient(gradient: Gradient(colors: [Color.yellow, Color.green]), startPoint: .leading, endPoint: .trailing))
                         .cornerRadius(25)
                 }
                 
@@ -137,7 +137,7 @@ struct SignInView: View {
                         .frame(height: 50)
                         .foregroundColor(.white)
                         .font(.system(size: 12, weight: .bold))
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.yellow, Color.green]), startPoint: .leading, endPoint: .trailing))
+                        //.background(LinearGradient(gradient: Gradient(colors: [Color.yellow, Color.green]), startPoint: .leading, endPoint: .trailing))
                         .cornerRadius(25)
                 }
                 
